@@ -1,0 +1,64 @@
+﻿subdivision_name,subdivision_code,us_state_fips,us_state_postal
+Alabama,01,01,AL
+Alaska,02,02,AK
+American Samoa,60,60,AS
+Arizona,04,04,AZ
+Arkansas,05,05,AR
+California,06,06,CA
+Colorado,08,08,CO
+Connecticut,09,09,CT
+Delaware,10,10,DE
+District of Columbia,11,11,DC
+Florida,12,12,FL
+Georgia,13,13,GA
+Guam,66,66,GU
+Hawaii,15,15,HI
+Idaho,16,16,ID
+Illinois,17,17,IL
+Indiana,18,18,IN
+Iowa,19,19,IA
+Kansas,20,20,KS
+Kentucky,21,21,KY
+Louisiana,22,22,LA
+Maine,23,23,ME
+Maryland,24,24,MD
+Massachusetts,25,25,MA
+Michigan,26,26,MI
+Minnesota,27,27,MN
+Mississippi,28,28,MS
+Missouri,29,29,MO
+Montana,30,30,MT
+Nebraska,31,31,NE
+Nevada,32,32,NV
+New Hampshire,33,33,NH
+New Jersey,34,34,NJ
+New Mexico,35,35,NM
+New York,36,36,NY
+North Carolina,37,37,NC
+North Dakota,38,38,ND
+Northern Mariana Islands,69,69,MP
+Ohio,39,39,OH
+Oklahoma,40,40,OK
+Oregon,41,41,OR
+Pennsylvania,42,42,PA
+Puerto Rico,72,72,PR
+Rhode Island,44,44,RI
+South Carolina,45,45,SC
+South Dakota,46,46,SD
+Tennessee,47,47,TN
+Texas,48,48,TX
+Utah,49,49,UT
+Vermont,50,50,VT
+"Virgin Islands, U.S.",78,78,VI
+Virgin Islands,78,78,VI
+United States Virgin Islands,78,78,VI
+Virginia,51,51,VA
+Washington,53,53,WA
+West Virginia,54,54,WV
+Wisconsin,55,55,WI
+Wyoming,56,56,WY
+Diamond Princess,DP,,
+Grand Princess,GP,,
+US,US,,
+Recovered,RC,,
+Wuhan Evacuee,WU,,
