@@ -1,13 +1,13 @@
 name: run JH scripts
 
-# on: 
-#   schedule:
-#   #run every night at midnight
-#     - cron: '0 0 * * *'
-on:
-  push:
-   #run on every push to master
-    branches: [ master ]
+on: 
+  schedule:
+  #run every night at midnight
+    - cron: '0 0 * * *'
+# on:
+#   push:
+#    #run on every push to master
+#     branches: [ master ]
 
 jobs:
   linux:
@@ -36,5 +36,5 @@ jobs:
        git remote add github "https://$GITHUB_ACTOR:$GITHUB_TOKEN@github.com/$GITHUB_REPOSITORY.git"
        git pull github ${GITHUB_REF} --ff-only
        git add .
-       git commit -m "added data"
+       git commit -m "added daily Johns Hopkins data via pipeline"
        git push github HEAD:${GITHUB_REF}
