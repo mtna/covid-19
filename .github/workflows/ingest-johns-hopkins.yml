@@ -1,13 +1,13 @@
 name: run JH scripts
 
-on: 
-  schedule:
-  #run every night at midnight
-    - cron: '0 0 * * *'
-# on:
-#   push:
-#    #run on every push to master
-#     branches: [ master ]
+# on: 
+#   schedule:
+#   #run every night at midnight
+#     - cron: '0 0 * * *'
+on:
+  push:
+   #run on every push to master
+    branches: [ master ]
 
 jobs:
   linux:
@@ -17,10 +17,10 @@ jobs:
     steps:
       #checkout branch to work on it 
     - uses: actions/checkout@v2
-       #set up username and id 
-    - uses: fregante/setup-git-token@v1
-      with:
-         token: ${{ secrets.GITHUB_TOKEN }}
+    - name: Setup git user
+      run: |
+         git config --global user.name "$(git --no-pager log --format=format:'%an' -n 1)"
+         git config --global user.email "$(git --no-pager log --format=format:'%ae' -n 1)
     - name: Set up Python
       uses: actions/setup-python@v1
       with:
