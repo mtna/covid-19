@@ -2,6 +2,8 @@
 
 Our COVID-19 project focuses on improving and facilitating access to COVID-19 related data by curating the information and delivering as a through our Rich Data Services API and related web applications. Visit our COVID-19 web site at http://covid-19.mtna.us for more information.
 
+*Please note that this project is still in the pre-release phase and some elements are liable to change. If you have any questions, concerns, or suggestions for improvement, please reach out to us at mtna@mtna.us.*
+
 In the process of packaging the data for publication, we are commonly addressing various data quality issues surrounding the various data sources, such as:
 
 - reshaping or reorganizing the data to be better suited for analytical purposes
