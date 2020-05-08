@@ -1,7 +1,10 @@
 
 # Johns Hopkins CSSE Coronavirus COVID-19 Data 
 
+*Please note that this project is still in the pre-release phase and elements are liable to change. If you have any questions, concerns, or suggestions for improvement, please reach out to us at mtna@mtna.us.*
+
 This repository contains processing tools and data sourced from the [2019 Novel Coronavirus COVID-19 (2019-nCoV) Data Repository by Johns Hopkins CSSE](https://github.com/CSSEGISandData/COVID-19) GitHub project. 
+
 
 ## csse_covid_19_daily_reports
 This dataset, released daily as CSV file, provides various COVID-19 cases and death counts at the national and subnational levels. 
