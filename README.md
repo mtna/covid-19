@@ -1,8 +1,8 @@
 # MTNA/RDS COVID-19 Project
 
-Our COVID-19 project focuses on improving and facilitating access to COVID-19 related data by curating the information and delivering as a through our Rich Data Services API and related web applications. Visit our COVID-19 web site at http://covid-19.mtna.us for more information.
+#### _WARNING: THIS PROJECT IS IN EARLY DEVELOPMENT STAGE. CONTENT OR CODE SHOULD ONLY BE USED FOR TESTING OR EVALUATION PURPOSES._
 
-*Please note that this project is still in the pre-release phase and some elements are liable to change. If you have any questions, concerns, or suggestions for improvement, please reach out to us at mtna@mtna.us.*
+Our COVID-19 project focuses on improving and facilitating access to COVID-19 related data by curating the information and delivering as a through our Rich Data Services API and related web applications. Visit our COVID-19 web site at http://covid-19.mtna.us for more information.
 
 In the process of packaging the data for publication, we are commonly addressing various data quality issues surrounding the various data sources, such as:
 
@@ -22,7 +22,7 @@ We currently are currently harvesting and compiling data form the following data
 
 ## Terms of Use
 
-This repository and its contents herein, including all data, metadata, scripts, copyright 2020 Metadata Technology North America Inc., all rights reserved, is provided to the public strictly for educational and academic research purposes. The content relies upon publicly available data from multiple sources, that do not always agree. Metadata Technology North America Inc. hereby disclaims any and all representations and warranties with respect to the Website, including accuracy, fitness for use, and merchantability. Reliance on the Website for medical guidance or use of the Website in commerce is strictly prohibited.
+This Website, underlying services, and content herein, including all data, metadata, scripts, documentation, and resources, are provided to the public strictly for educational and academic research purposes. The content relies upon publicly available data from multiple sources,that do not always agree. Metadata Technology North America Inc. hereby disclaims any and all representations and warranties with respect to the Website, including accuracy, fitness for use, and merchantability. You are responsible for determining the suitability of this data for your purposes. Reliance on the Website for medical, financial, or other decision making purposes, or the use of the Website for commercial purposes, are strictly prohibited. If you do not agree with these terms, and to our general Website term and privacy policy, you may not access and use this Website.
 
 ## Software Licensing
 
