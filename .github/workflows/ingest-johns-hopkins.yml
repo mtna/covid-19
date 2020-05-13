@@ -1,4 +1,4 @@
-name: run JH scripts
+name: Johns Hopkins Data Ingestion/Transformation
 
 on: 
   schedule:
