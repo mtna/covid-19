@@ -18,7 +18,7 @@ jobs:
       with:
          token: ${{ secrets.GITHUB_TOKEN }}
     - name: pull data via curl
-      run: /bin/sh scripts/csvDownload.sh CA_GOV https://health-infobase.canada.ca/src/data/covidLive/covid19.csv data/ca/gov/raw
+      run: /bin/sh scripts/csvDownload.sh CA_GOV https://health-infobase.canada.ca/src/data/covidLive/covid19.csv data/ca/gov/cases/raw
     - name: Set up Python
       uses: actions/setup-python@v1
       with:
@@ -31,7 +31,7 @@ jobs:
       run: |
        git remote add github "https://$GITHUB_ACTOR:$GITHUB_TOKEN@github.com/$GITHUB_REPOSITORY.git"
        git pull github ${GITHUB_REF} --ff-only
-       python data/ca/gov/harvester.py
+       python data/ca/gov/cases/harvester.py
        git add .
        git commit -m "adding CA-GOV data via github actions"
        git push github HEAD:${GITHUB_REF}
