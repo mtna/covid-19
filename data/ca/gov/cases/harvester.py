@@ -78,3 +78,9 @@ if __name__ == "__main__":
 			data = pd.read_csv(f"./data/ca/gov/cases/raw/{filename}", float_precision='round_trip')
 			df = cleanData(data)
 			df.to_csv(f"./data/ca/gov/cases/clean/{filename}", index=False)
+			#also add to the latest.csv
+			if path.exists(f'./data/ca/gov/cases/latest.csv'):
+				#clear out the file's existing data and write to it
+				#this is a copy of the data in the clean folder, so that the db loading script can look for an unchanging file name.
+				open('./data/ca/gov/cases/latest.csv', 'w').close()
+				df.to_csv(f"./data/ca/gov/cases/latest.csv", index=False)

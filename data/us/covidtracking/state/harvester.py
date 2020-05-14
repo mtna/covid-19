@@ -94,6 +94,10 @@ if __name__ == "__main__":
 			data = pd.read_csv(f"./data/us/covidtracking/state/raw/{filename}")
 			df = cleanData(data)
 			df.to_csv(f"./data/us/covidtracking/state/clean/{filename}", index=False)
-			
+			if path.exists(f'./data/us/covidtracking/state/latest.csv'):
+				#clear out the file's existing data and write to it
+				#this is a copy of the data in the clean folder, so that the db loading script can look for an unchanging file name.
+				open('./data/us/covidtracking/state/latest.csv', 'w').close()
+				df.to_csv(f"./data/us/covidtracking/state/latest.csv", index=False)
 
 
