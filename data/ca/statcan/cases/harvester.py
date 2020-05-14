@@ -129,11 +129,11 @@ def cleanData(data):
 if __name__ == "__main__":
 	path = os.path
 	# Loop over the files within state folder
-	for filename in os.listdir('./data/ca/statcan/raw'):
+	for filename in os.listdir('./data/ca/statcan/cases/raw'):
 		csvFile = filename.replace('.zip','.csv')
-		if filename.endswith('.zip') and path.exists(f'./data/ca/statcan/clean/{csvFile}') == False:
+		if filename.endswith('.zip') and path.exists(f'./data/ca/statcan/cases/clean/{csvFile}') == False:
 			print(filename)
 			# For each csv file, map the transformed data to its respective file in the harvested folder
-			data = pd.read_csv(f"./data/ca/statcan/raw/{filename}")
+			data = pd.read_csv(f"./data/ca/statcan/cases/raw/{filename}")
 			df = cleanData(data)
-			df.to_csv(f"./data/ca/statcan/clean/{csvFile}", index=False)
+			df.to_csv(f"./data/ca/statcan/cases/clean/{csvFile}", index=False)

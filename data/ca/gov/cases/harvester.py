@@ -71,10 +71,10 @@ def cleanData(data):
 if __name__ == "__main__":
 	path = os.path
 	# Loop over the files within state folder
-	for filename in os.listdir('./data/ca/gov/raw'):
-		if filename.endswith('.csv') and path.exists(f'./data/ca/gov/clean/{filename}') == False:
+	for filename in os.listdir('./data/ca/gov/cases/raw'):
+		if filename.endswith('.csv') and path.exists(f'./data/ca/gov/cases/clean/{filename}') == False:
 			print(filename)
 			# For each csv file, map the transformed data to its respective file in the harvested folder
-			data = pd.read_csv(f"./data/ca/gov/raw/{filename}", float_precision='round_trip')
+			data = pd.read_csv(f"./data/ca/gov/cases/raw/{filename}", float_precision='round_trip')
 			df = cleanData(data)
-			df.to_csv(f"./data/ca/gov/clean/{filename}", index=False)
+			df.to_csv(f"./data/ca/gov/cases/clean/{filename}", index=False)
