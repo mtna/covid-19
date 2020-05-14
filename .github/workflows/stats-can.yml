@@ -23,7 +23,7 @@ jobs:
       with:
          token: ${{ secrets.GITHUB_TOKEN }}
     - name: pull data via curl
-      run: /bin/sh scripts/statCanDownload.sh https://www150.statcan.gc.ca/n1/tbl/csv/13100766-eng.zip 13100766.csv data/ca/statcan/raw/
+      run: /bin/sh scripts/statCanDownload.sh https://www150.statcan.gc.ca/n1/tbl/csv/13100766-eng.zip 13100766.csv data/ca/statcan/cases/raw/
     - name: Set up Python
       uses: actions/setup-python@v1
       with:
@@ -36,7 +36,7 @@ jobs:
       run: |
        git remote add github "https://$GITHUB_ACTOR:$GITHUB_TOKEN@github.com/$GITHUB_REPOSITORY.git"
        git pull github ${GITHUB_REF} --ff-only
-       python data/ca/statcan/harvester.py
+       python data/ca/statcan/cases/harvester.py
        git add .
        git commit -m "adding StatsCan data via github actions"
        git push github HEAD:${GITHUB_REF}
