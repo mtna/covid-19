@@ -1,0 +1,38 @@
+name: Data QA
+#check if headers have changed day to day
+
+on: 
+  schedule:
+   #run daily at 7UTC
+    - cron: '0 7 * * *'
+# on:
+#   push:
+#    branches: [ master ]
+
+jobs:
+ qa:   
+    name: Data QA
+    runs-on: ubuntu-latest
+    
+    steps:
+    - uses: actions/checkout@v2
+       #set up username and id 
+    - uses: fregante/setup-git-token@v1
+      with:
+         token: ${{ secrets.GITHUB_TOKEN }}
+    - name: Set up Python
+      uses: actions/setup-python@v1
+      with:
+        python-version: '3.x'
+    - name: Install dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install unittest-xml-reporting
+    - name: pull 
+      run: |
+       git remote add github "https://$GITHUB_ACTOR:$GITHUB_TOKEN@github.com/$GITHUB_REPOSITORY.git"
+       git pull github ${GITHUB_REF} --ff-only
+    - name: ca-gov
+      run: python tests/csvTest.py ./data/ca/gov/raw 1
+    - name: covid tracking state
+      run: python tests/csvTest.py ./data/us/covidtracking/state/raw 1

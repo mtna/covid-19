@@ -1,0 +1,43 @@
+name: Johns Hopkins Data Ingestion/Transformation
+
+on: 
+  schedule:
+  #run every night at 1am Eastern Time, since JH is updated around midnight ET.
+  #Github actions use UTC time which is 4 hours ahead of ET.
+   - cron: '0 5 * * *'
+
+# uncomment these lines if you need to run the pipeline manually. 
+#   push:
+#    #run on every push to master
+#     branches: [ master ]
+
+jobs:
+  jh:
+    name: JH data ingestion/transformation
+    runs-on: ubuntu-latest
+    steps:
+      #checkout branch to work on it 
+    - uses: actions/checkout@v2
+    - name: Setup git user
+      run: |
+         git config --global user.name "$(git --no-pager log --format=format:'%an' -n 1)"
+         git config --global user.email "$(git --no-pager log --format=format:'%ae' -n 1)"
+    - name: Set up Python
+      uses: actions/setup-python@v1
+      with:
+        python-version: '3.x'
+    - name: Install Python dependencies
+      run: |
+        python -m pip install --upgrade pip
+    - name: Pull and commit data
+      run: |
+       pip install pandas
+       cd data/us/jhu-ccse
+       python harvester.py -c
+       git remote add github "https://$GITHUB_ACTOR:$GITHUB_TOKEN@github.com/$GITHUB_REPOSITORY.git"
+       git pull github ${GITHUB_REF} --ff-only
+       git add .
+       git commit -m "added daily Johns Hopkins data via pipeline"
+       git push github HEAD:${GITHUB_REF}
+
+ 
