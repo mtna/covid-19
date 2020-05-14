@@ -1,4 +1,4 @@
-CREATE TABLE "ca_statcan"(
+CREATE TABLE "ca_statcan_cases"(
 "case_id" INT,
 "episode_start_date" DATE,
 "date_stamp" DATE,

@@ -1,5 +1,5 @@
 
-CREATE TABLE "ca_gov"(
+CREATE TABLE "ca_gov_cases"(
 "date_stamp" DATE,
 "ca_provterr" VARCHAR(2),
 "ca_covid_geo" VARCHAR(2),
