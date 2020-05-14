@@ -1,0 +1,38 @@
+name: ca gov
+
+on: 
+   schedule:
+    #run every night at 5:10 UTC
+     - cron: '10 5 * * *'
+#   push:
+#     branches: [ master ]
+
+jobs:
+  ca-gov:
+   name: CA-GOV Data Ingestion
+   runs-on: ubuntu-latest
+   steps:
+    - uses: actions/checkout@v2
+       #set up username and id 
+    - uses: fregante/setup-git-token@v1
+      with:
+         token: ${{ secrets.GITHUB_TOKEN }}
+    - name: pull data via curl
+      run: /bin/sh scripts/csvDownload.sh CA_GOV https://health-infobase.canada.ca/src/data/covidLive/covid19.csv data/ca/gov/cases/raw
+    - name: Set up Python
+      uses: actions/setup-python@v1
+      with:
+        python-version: '3.x'
+    - name: Install dependencies
+      run: |
+        python -m pip install --upgrade pip
+         pip install pandas
+    - name: transform
+      run: |
+       git remote add github "https://$GITHUB_ACTOR:$GITHUB_TOKEN@github.com/$GITHUB_REPOSITORY.git"
+       git pull github ${GITHUB_REF} --ff-only
+       python data/ca/gov/cases/harvester.py
+       git add .
+       git commit -m "adding CA-GOV data via github actions"
+       git push github HEAD:${GITHUB_REF}
+       
