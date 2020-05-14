@@ -64,7 +64,7 @@ jobs:
          pip install addfips
     - name: transform
       run: |
-       git remote add github "https://$GITHUB_ACTOR:$GITHUB_TOKEN@github.com/$GITHUB_REPOSITORY.git"
+       #git remote add github "https://$GITHUB_ACTOR:$GITHUB_TOKEN@github.com/$GITHUB_REPOSITORY.git"
        git pull github ${GITHUB_REF} --ff-only
        python data/us/covidtracking/state/harvester.py
        git add .
@@ -92,7 +92,7 @@ jobs:
          pip install pandas
     - name: transform
       run: |
-       git remote add github "https://$GITHUB_ACTOR:$GITHUB_TOKEN@github.com/$GITHUB_REPOSITORY.git"
+       #git remote add github "https://$GITHUB_ACTOR:$GITHUB_TOKEN@github.com/$GITHUB_REPOSITORY.git"
        git pull github ${GITHUB_REF} --ff-only
        python data/ca/gov/harvester.py
        git add .
