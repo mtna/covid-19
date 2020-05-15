@@ -36,3 +36,5 @@ jobs:
       run: python tests/csvTest.py ./data/ca/gov/cases/raw 1
     - name: covid tracking state
       run: python tests/csvTest.py ./data/us/covidtracking/state/raw 1
+    - name: ny-doh
+      run: python tests/csvTest.py ./data/us-ny/ny-doh/raw 1
