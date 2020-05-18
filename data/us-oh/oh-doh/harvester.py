@@ -112,3 +112,8 @@ if __name__ == "__main__":
 			data = pd.read_csv(f"./data/us-oh/oh-doh/raw/{filename}")
 			df = transformData(data)
 			df.to_csv(f"./data/us-oh/oh-doh/transformed/{filename}", index=False)
+			if path.exists(f'./data/us-oh/oh-doh/latest.csv'):
+				#clear out the file's existing data and write to it
+				open('./data/us-oh/oh-doh/latest.csv', 'w').close()
+				df.to_csv(f"./data/us-oh/oh-doh/latest.csv", index=False)
+
