@@ -20,7 +20,7 @@ jobs:
       with:
          token: ${{ secrets.GITHUB_TOKEN }}
     - name: pull data via curl
-      run: /bin/sh scripts/csvDownload.sh OH https://coronavirus.ohio.gov/static/COVIDSummaryData.csv data/us-oh/oh-doh
+      run: /bin/sh scripts/csvDownload.sh OH https://coronavirus.ohio.gov/static/COVIDSummaryData.csv data/us-oh/oh-doh/raw
     - name: Set up Python
       uses: actions/setup-python@v1
       with:
