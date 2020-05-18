@@ -19,6 +19,11 @@ The repository holds the various tools we use to harvest and support the above t
 We currently are currently harvesting and compiling data form the following data sources:
 
 - [2019 Novel Coronavirus COVID-19 (2019-nCoV) Data Repository by Johns Hopkins CSSE](data/us/jhu-ccse/README.md)
+- [The COVID Tracking Project](https://covidtracking.com/about-project)
+- [Government of Canada](https://www.canada.ca/en/public-health/services/diseases/2019-novel-coronavirus-infection.html)
+- [Statistics Canada](https://www.statcan.gc.ca/eng/start)
+- [New York State Health Data](https://health.data.ny.gov/)
+- [Ohio Department of Health](https://coronavirus.ohio.gov/wps/portal/gov/covid-19/dashboards)
 
 
 ## Licensing
