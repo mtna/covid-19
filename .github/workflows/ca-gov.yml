@@ -32,7 +32,6 @@ jobs:
          pip install pandas
     - name: transform
       run: |
-      
        python data/ca/gov/cases/harvester.py
        git add .
        git commit -m "adding CA-GOV data via github actions"
