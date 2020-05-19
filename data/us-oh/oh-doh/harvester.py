@@ -106,14 +106,18 @@ if __name__ == "__main__":
 			data = pd.read_csv(f"./data/us-oh/oh-doh/raw/{filename}")
 			df = cleanData(data)
 			df.to_csv(f"./data/us-oh/oh-doh/clean/{filename}", index=False)
+			if path.exists(f'./data/us-oh/oh-doh/latest_clean.csv'):
+				#clear out the file's existing data and write to it
+				open('./data/us-oh/oh-doh/latest_clean.csv', 'w').close()
+				df.to_csv(f"./data/us-oh/oh-doh/latest_clean.csv", index=False)
 		if filename.endswith('.csv') and path.exists(f'./data/us-oh/oh-doh/transformed/{filename}') == False:
 			print(filename)
 			# For each csv file, map the transformed data to its respective file in the harvested folder
 			data = pd.read_csv(f"./data/us-oh/oh-doh/raw/{filename}")
 			df = transformData(data)
 			df.to_csv(f"./data/us-oh/oh-doh/transformed/{filename}", index=False)
-			if path.exists(f'./data/us-oh/oh-doh/latest.csv'):
+			if path.exists(f'./data/us-oh/oh-doh/latest_agg.csv'):
 				#clear out the file's existing data and write to it
-				open('./data/us-oh/oh-doh/latest.csv', 'w').close()
-				df.to_csv(f"./data/us-oh/oh-doh/latest.csv", index=False)
+				open('./data/us-oh/oh-doh/latest_agg.csv', 'w').close()
+				df.to_csv(f"./data/us-oh/oh-doh/latest_agg.csv", index=False)
 
