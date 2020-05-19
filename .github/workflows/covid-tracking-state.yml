@@ -21,6 +21,7 @@ jobs:
          token: ${{ secrets.GITHUB_TOKEN }}
     - name: pull data via curl
       run: |
+       git remote add github "https://$GITHUB_ACTOR:$GITHUB_TOKEN@github.com/$GITHUB_REPOSITORY.git"
        git pull github ${GITHUB_REF} --ff-only
        /bin/sh scripts/csvDownload.sh COVID_TRACKING_STATE_HIST https://covidtracking.com/api/v1/states/daily.csv data/us/covidtracking/state/raw
     - name: Set up Python
@@ -34,7 +35,7 @@ jobs:
          pip install addfips
     - name: transform
       run: |
-       git remote add github "https://$GITHUB_ACTOR:$GITHUB_TOKEN@github.com/$GITHUB_REPOSITORY.git"
+     # git remote add github "https://$GITHUB_ACTOR:$GITHUB_TOKEN@github.com/$GITHUB_REPOSITORY.git"
        #git pull github ${GITHUB_REF} --ff-only
        python data/us/covidtracking/state/harvester.py
        git add .
