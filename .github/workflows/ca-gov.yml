@@ -4,8 +4,8 @@ on:
    schedule:
     #run every night at 5:10 UTC
      - cron: '10 5 * * *'
-#   push:
-#     branches: [ master ]
+   push:
+    branches: [ master ]
 
 jobs:
   ca-gov:
