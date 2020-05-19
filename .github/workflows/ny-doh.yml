@@ -20,7 +20,10 @@ jobs:
       with:
          token: ${{ secrets.GITHUB_TOKEN }}
     - name: pull data via curl
-      run: /bin/sh scripts/csvDownload.sh NY https://health.data.ny.gov/api/views/xdss-u53e/rows.csv?accessType=DOWNLOAD data/us-ny/ny-doh/raw
+      run: |
+       git remote add github "https://$GITHUB_ACTOR:$GITHUB_TOKEN@github.com/$GITHUB_REPOSITORY.git"
+       git pull github ${GITHUB_REF} --ff-only
+       /bin/sh scripts/csvDownload.sh NY https://health.data.ny.gov/api/views/xdss-u53e/rows.csv?accessType=DOWNLOAD data/us-ny/ny-doh/raw
     - name: Set up Python
       uses: actions/setup-python@v1
       with:
@@ -32,8 +35,6 @@ jobs:
          pip install addfips
     - name: transform
       run: |
-       git remote add github "https://$GITHUB_ACTOR:$GITHUB_TOKEN@github.com/$GITHUB_REPOSITORY.git"
-       git pull github ${GITHUB_REF} --ff-only
        python data/us-ny/ny-doh/harvester.py
        git add .
        git commit -m "adding NY data via github actions"
