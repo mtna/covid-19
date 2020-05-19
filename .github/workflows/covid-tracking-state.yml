@@ -20,7 +20,9 @@ jobs:
       with:
          token: ${{ secrets.GITHUB_TOKEN }}
     - name: pull data via curl
-      run: /bin/sh scripts/csvDownload.sh COVID_TRACKING_STATE_HIST https://covidtracking.com/api/v1/states/daily.csv data/us/covidtracking/state/raw
+      run: |
+       git pull github ${GITHUB_REF} --ff-only
+       /bin/sh scripts/csvDownload.sh COVID_TRACKING_STATE_HIST https://covidtracking.com/api/v1/states/daily.csv data/us/covidtracking/state/raw
     - name: Set up Python
       uses: actions/setup-python@v1
       with:
@@ -33,7 +35,7 @@ jobs:
     - name: transform
       run: |
        git remote add github "https://$GITHUB_ACTOR:$GITHUB_TOKEN@github.com/$GITHUB_REPOSITORY.git"
-       git pull github ${GITHUB_REF} --ff-only
+       #git pull github ${GITHUB_REF} --ff-only
        python data/us/covidtracking/state/harvester.py
        git add .
        git commit -m "adding CTP data via github actions"
