@@ -5,8 +5,8 @@ on:
    #run daily at 5:40 UTC
      - cron: '40 5 * * *'
 # on:
-   push:
-    branches: [ master ]
+  # push:
+   # branches: [ master ]
 
 jobs:
  ny-doh:   
