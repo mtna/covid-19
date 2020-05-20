@@ -1,11 +1,11 @@
 name: OH DOH Data
 
 on: 
-   schedule:
+#    schedule:
    #run daily at 5:30 UTC
-     - cron: '30 5 * * *'
-  # push:
-   # branches: [ master ]
+#      - cron: '30 5 * * *'
+  push:
+   branches: [ master ]
 
 jobs:
  oh-doh:   
@@ -19,7 +19,10 @@ jobs:
       with:
          token: ${{ secrets.GITHUB_TOKEN }}
     - name: pull data via curl
-      run: /bin/sh scripts/csvDownload.sh OH https://coronavirus.ohio.gov/static/COVIDSummaryData.csv data/us-oh/oh-doh/raw
+      run: |
+          git remote add github "https://$GITHUB_ACTOR:$GITHUB_TOKEN@github.com/$GITHUB_REPOSITORY.git"
+          git pull github ${GITHUB_REF} --ff-only
+          /bin/sh scripts/csvDownload.sh OH https://coronavirus.ohio.gov/static/COVIDSummaryData.csv data/us-oh/oh-doh/raw
     - name: Set up Python
       uses: actions/setup-python@v1
       with:
@@ -31,8 +34,6 @@ jobs:
          pip install addfips
     - name: transform
       run: |
-       git remote add github "https://$GITHUB_ACTOR:$GITHUB_TOKEN@github.com/$GITHUB_REPOSITORY.git"
-       git pull github ${GITHUB_REF} --ff-only
        python data/us-oh/oh-doh/harvester.py
        git add .
        git commit -m "adding OH data via github actions"
