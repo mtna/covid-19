@@ -6,8 +6,8 @@ on:
    #run daily at 7UTC
     - cron: '0 7 * * *'
 # on:
-#   push:
-#    branches: [ master ]
+  push:
+   branches: [ master ]
 
 jobs:
  qa:   
@@ -34,9 +34,13 @@ jobs:
        git pull github ${GITHUB_REF} --ff-only
     - name: ca-gov
       run: python tests/csvTest.py ./data/ca/gov/cases/raw 1
+      if: succeeded() || failed()   
     - name: covid tracking state
       run: python tests/csvTest.py ./data/us/covidtracking/state/raw 1
+      if: succeeded() || failed()
     - name: ny-doh
       run: python tests/csvTest.py ./data/us-ny/ny-doh/raw 1
+      if: succeeded() || failed()
     - name: oh-doh
       run: python tests/csvTest.py ./data/us-oh/oh-doh/raw 1
+      
