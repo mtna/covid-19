@@ -1,10 +1,11 @@
 name: statcan
 
-on: 
-  schedule:
+#making this a registry_page trigger bc we don't want it to run right now. return to regular schedule once statcan is updated.
+on: [registry_package]
+#  schedule:
 #   #run daily at 6 UTC (2ET)
 #   #note that this takes around 10 minutes to run so it should be the last one in the series
-   - cron: '0 6 * * *'
+ #  - cron: '0 6 * * *'
 
 # uncomment these lines if you need to run the pipeline manually. 
 #   push:
