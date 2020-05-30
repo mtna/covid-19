@@ -72,7 +72,7 @@ order by date_stamp, subdivision_code
 
 
 /*----------------------*/
-/* us_jhu_ccse_us_state */
+/* us_jhu_ccse_us_county */
 /*----------------------*/
 
 create table if not exists  us_jhu_ccse_us_county_dev (
