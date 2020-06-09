@@ -5,8 +5,8 @@ on:
    #run daily at 5:10 UTC
      - cron: '10 5 * * *'
 # on:
-   push:
-    branches: [ master ]
+#    push:
+#     branches: [ master ]
 
 jobs:
  tn-doh:   
@@ -44,14 +44,14 @@ jobs:
        git add .
        git commit -m "adding TN data via github actions"
        git push github HEAD:${GITHUB_REF}
-#     - name: Slack notification
-#       #should run if any previous step fails
-#       if: failure()
-#       env:
-#        SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK }}
-#        SLACK_USERNAME: GitHub Actions # Optional. (defaults to webhook app)
-#        SLACK_CHANNEL: alerts-rds # Optional. (defaults to webhook)
-#        SLACK_AVATAR: repository # Optional. can be (repository, sender, an URL) (defaults to webhook app avatar)
-#       uses: Ilshidur/action-slack@master
-#       with:
-#           args: 'Something went wrong in the Tennesee workflow.' # Optional
+    - name: Slack notification
+      #should run if any previous step fails
+      if: failure()
+      env:
+       SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK }}
+       SLACK_USERNAME: GitHub Actions # Optional. (defaults to webhook app)
+       SLACK_CHANNEL: alerts-rds # Optional. (defaults to webhook)
+       SLACK_AVATAR: repository # Optional. can be (repository, sender, an URL) (defaults to webhook app avatar)
+      uses: Ilshidur/action-slack@master
+      with:
+          args: 'Something went wrong in the Tennesee workflow.' # Optional
