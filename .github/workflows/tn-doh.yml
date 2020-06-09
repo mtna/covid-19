@@ -40,18 +40,18 @@ jobs:
 
     - name: transform
       run: |
-       python /data/us-tn/tn-doh/harvester.py
+       python data/us-tn/tn-doh/harvester.py
        git add .
        git commit -m "adding TN data via github actions"
        git push github HEAD:${GITHUB_REF}
-    - name: Slack notification
-      #should run if any previous step fails
-      if: failure()
-      env:
-       SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK }}
-       SLACK_USERNAME: GitHub Actions # Optional. (defaults to webhook app)
-       SLACK_CHANNEL: alerts-rds # Optional. (defaults to webhook)
-       SLACK_AVATAR: repository # Optional. can be (repository, sender, an URL) (defaults to webhook app avatar)
-      uses: Ilshidur/action-slack@master
-      with:
-          args: 'Something went wrong in the Tennesee workflow.' # Optional
+#     - name: Slack notification
+#       #should run if any previous step fails
+#       if: failure()
+#       env:
+#        SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK }}
+#        SLACK_USERNAME: GitHub Actions # Optional. (defaults to webhook app)
+#        SLACK_CHANNEL: alerts-rds # Optional. (defaults to webhook)
+#        SLACK_AVATAR: repository # Optional. can be (repository, sender, an URL) (defaults to webhook app avatar)
+#       uses: Ilshidur/action-slack@master
+#       with:
+#           args: 'Something went wrong in the Tennesee workflow.' # Optional
