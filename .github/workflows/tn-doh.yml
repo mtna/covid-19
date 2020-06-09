@@ -36,7 +36,7 @@ jobs:
        /bin/sh scripts/xlsxDownload.sh TN-AGE https://www.tn.gov/content/dam/tn/health/documents/cedep/novel-coronavirus/datasets/Public-Dataset-Age.XLSX data/us-tn/tn-doh/age/raw
        /bin/sh scripts/xlsxDownload.sh TN-COUNTY-NEW https://www.tn.gov/content/dam/tn/health/documents/cedep/novel-coronavirus/datasets/Public-Dataset-County-New.XLSX data/us-tn/tn-doh/county_new/raw
        /bin/sh scripts/xlsxDownload.sh TN-CASE-INFO https://www.tn.gov/content/dam/tn/health/documents/cedep/novel-coronavirus/datasets/Public-Dataset-Daily-Case-Info.XLSX data/us-tn/tn-doh/daily_case_info/raw
-       /bin/sh tscripts/xlsxDownload.sh TN-RACE https://www.tn.gov/content/dam/tn/health/documents/cedep/novel-coronavirus/datasets/Public-Dataset-RaceEthSex.XLSX data/us-tn/tn-doh/race_eth_sex/raw
+       /bin/sh scripts/xlsxDownload.sh TN-RACE https://www.tn.gov/content/dam/tn/health/documents/cedep/novel-coronavirus/datasets/Public-Dataset-RaceEthSex.XLSX data/us-tn/tn-doh/race_eth_sex/raw
 
     - name: transform
       run: |
