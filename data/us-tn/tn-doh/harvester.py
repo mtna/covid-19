@@ -20,6 +20,8 @@ countyVariables = {
 	'NEW_CASES': 'cnt_total_new',
 	'TOTAL_CONFIRMED': 'cnt_confirmed',
 	'NEW_CONFIRMED': 'cnt_confirmed_new',
+	'TOTAL_PROBABLE': 'cnt_probable',
+	'NEW_PROBABLE': 'cnt_probable_new',
 	'POS_TESTS': 'cnt_tested_pos',
 	'NEG_TESTS': 'cnt_tested_neg',
 	'TOTAL_TESTS': 'cnt_tested',
@@ -40,6 +42,8 @@ dailyVariables = {
 	'NEW_CASES': 'cnt_total_new',
 	'TOTAL_CONFIRMED': 'cnt_confirmed',
 	'NEW_CONFIRMED': 'cnt_confirmed_new',
+	'TOTAL_PROBABLE': 'cnt_probable',
+	'NEW_PROBABLE': 'cnt_probable_new',
 	'POS_TESTS': 'cnt_tested_pos',
 	'NEG_TESTS': 'cnt_tested_neg',
 	'TOTAL_TESTS': 'cnt_tested',
@@ -122,6 +126,9 @@ def cleanCountyData(data):
 	df['cnt_total_new'] = df['cnt_total_new'].astype(pd.Int32Dtype())
 	df['cnt_confirmed'] = df['cnt_confirmed'].astype(pd.Int32Dtype())
 	df['cnt_confirmed_new'] = df['cnt_confirmed_new'].astype(pd.Int32Dtype())
+	if 'cnt_probable' in df.columns:
+		df['cnt_probable'] = df['cnt_probable'].astype(pd.Int32Dtype())
+		df['cnt_probable_new'] = df['cnt_probable_new'].astype(pd.Int32Dtype())
 	df['cnt_tested_pos'] = df['cnt_tested_pos'].astype(pd.Int32Dtype())
 	df['cnt_tested_neg'] = df['cnt_tested_neg'].astype(pd.Int32Dtype())
 	df['cnt_tested'] = df['cnt_tested'].astype(pd.Int32Dtype())
@@ -136,7 +143,10 @@ def cleanCountyData(data):
 	df['cnt_hospitalized'] = df['cnt_hospitalized'].astype(pd.Int32Dtype())
 
 	# reorder so that the total and new are always next to each other in the same order
-	df = df[['date_stamp', 'us_county_fips', 'tn_covid_geo', 'cnt_total', 'cnt_total_new', 'cnt_confirmed', 'cnt_confirmed_new', 'cnt_active', 'cnt_active_new', 'cnt_hospitalized', 'cnt_hospitalized_new', 'cnt_recovered', 'cnt_recovered_new', 'cnt_death', 'cnt_death_new', 'cnt_tested_pos', 'cnt_tested_neg', 'cnt_tested', 'cnt_tested_new']]
+	if 'cnt_probable' in df.columns:
+		df = df[['date_stamp', 'us_county_fips', 'tn_covid_geo', 'cnt_total', 'cnt_total_new', 'cnt_confirmed', 'cnt_confirmed_new', 'cnt_probable', 'cnt_probable_new', 'cnt_active', 'cnt_active_new', 'cnt_hospitalized', 'cnt_hospitalized_new', 'cnt_recovered', 'cnt_recovered_new', 'cnt_death', 'cnt_death_new', 'cnt_tested_pos', 'cnt_tested_neg', 'cnt_tested', 'cnt_tested_new']]
+	else:
+		df = df[['date_stamp', 'us_county_fips', 'tn_covid_geo', 'cnt_total', 'cnt_total_new', 'cnt_confirmed', 'cnt_confirmed_new', 'cnt_active', 'cnt_active_new', 'cnt_hospitalized', 'cnt_hospitalized_new', 'cnt_recovered', 'cnt_recovered_new', 'cnt_death', 'cnt_death_new', 'cnt_tested_pos', 'cnt_tested_neg', 'cnt_tested', 'cnt_tested_new']]
 
 	# order the records by date
 	df = df.sort_values(by='date_stamp', ascending=True)
@@ -156,6 +166,9 @@ def cleanDailyData(data):
 	df['cnt_total_new'] = df['cnt_total_new'].astype(pd.Int32Dtype())
 	df['cnt_confirmed'] = df['cnt_confirmed'].astype(pd.Int32Dtype())
 	df['cnt_confirmed_new'] = df['cnt_confirmed_new'].astype(pd.Int32Dtype())
+	if 'cnt_probable' in df.columns:
+		df['cnt_probable'] = df['cnt_probable'].astype(pd.Int32Dtype())
+		df['cnt_probable_new'] = df['cnt_probable_new'].astype(pd.Int32Dtype())
 	df['cnt_tested_pos'] = df['cnt_tested_pos'].astype(pd.Int32Dtype())
 	df['cnt_tested_neg'] = df['cnt_tested_neg'].astype(pd.Int32Dtype())
 	df['cnt_tested'] = df['cnt_tested'].astype(pd.Int32Dtype())
@@ -170,7 +183,10 @@ def cleanDailyData(data):
 	df['cnt_hospitalized'] = df['cnt_hospitalized'].astype(pd.Int32Dtype())
 
 	# reorder so that the total and new are always next to each other in the same order
-	df = df[['date_stamp', 'cnt_total', 'cnt_total_new', 'cnt_confirmed', 'cnt_confirmed_new', 'cnt_active', 'cnt_active_new', 'cnt_hospitalized', 'cnt_hospitalized_new', 'cnt_recovered', 'cnt_recovered_new', 'cnt_death', 'cnt_death_new', 'cnt_tested_pos', 'cnt_tested_neg', 'cnt_tested', 'cnt_tested_new']]
+	if 'cnt_probable' in df.columns:
+		df = df[['date_stamp', 'cnt_total', 'cnt_total_new', 'cnt_confirmed', 'cnt_confirmed_new', 'cnt_probable', 'cnt_probable_new', 'cnt_active', 'cnt_active_new', 'cnt_hospitalized', 'cnt_hospitalized_new', 'cnt_recovered', 'cnt_recovered_new', 'cnt_death', 'cnt_death_new', 'cnt_tested_pos', 'cnt_tested_neg', 'cnt_tested', 'cnt_tested_new']]
+	else:
+		df = df[['date_stamp', 'cnt_total', 'cnt_total_new', 'cnt_confirmed', 'cnt_confirmed_new', 'cnt_active', 'cnt_active_new', 'cnt_hospitalized', 'cnt_hospitalized_new', 'cnt_recovered', 'cnt_recovered_new', 'cnt_death', 'cnt_death_new', 'cnt_tested_pos', 'cnt_tested_neg', 'cnt_tested', 'cnt_tested_new']]
 
 	# order the records by date
 	df = df.sort_values(by='date_stamp', ascending=True)
