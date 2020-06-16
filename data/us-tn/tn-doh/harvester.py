@@ -206,7 +206,7 @@ def cleanRaceEthSexData(data):
 if __name__ == "__main__":
 	path = os.path
 	# Loop over the files within the age folder
-	for filename in os.listdir('./data/us-tn/tn-doh/age/raw'):
+	for filename in sorted(os.listdir('./data/us-tn/tn-doh/age/raw')):
 		if filename.endswith('.csv') and path.exists(f'./data/us-tn/tn-doh/age/clean/{filename}') == False:
 			print(filename)
 			# For each csv file, map the transformed data to its respective file in the harvested folder
@@ -220,7 +220,7 @@ if __name__ == "__main__":
 
 	
 	# Loop over the files within the county folder
-	for filename in os.listdir('./data/us-tn/tn-doh/county_new/raw'):
+	for filename in sorted(os.listdir('./data/us-tn/tn-doh/county_new/raw')):
 		if filename.endswith('.csv') and path.exists(f'./data/us-tn/tn-doh/county_new/clean/{filename}') == False:
 			print(filename)
 			# For each csv file, map the transformed data to its respective file in the harvested folder
@@ -233,7 +233,7 @@ if __name__ == "__main__":
 				df.to_csv(f"./data/us-tn/tn-doh/latest_county.csv", index=False)
 				
 	# Loop over the files within the daily folder
-	for filename in os.listdir('./data/us-tn/tn-doh/daily_case_info/raw'):
+	for filename in sorted(os.listdir('./data/us-tn/tn-doh/daily_case_info/raw')):
 		if filename.endswith('.csv') and path.exists(f'./data/us-tn/tn-doh/daily_case_info/clean/{filename}') == False:
 			print(filename)
 			# For each csv file, map the transformed data to its respective file in the harvested folder
@@ -246,7 +246,7 @@ if __name__ == "__main__":
 				df.to_csv(f"./data/us-tn/tn-doh/latest_state.csv", index=False)
 
 	# Loop over the demographic files
-	for filename in os.listdir('./data/us-tn/tn-doh/race_eth_sex/raw'):
+	for filename in sorted(os.listdir('./data/us-tn/tn-doh/race_eth_sex/raw')):
 		if filename.endswith('.csv') and path.exists(f'./data/us-tn/tn-doh/race_eth_sex/clean/{filename}') == False:
 			print(filename)
 			# For each csv file, map the transformed data to its respective file in the harvested folder
