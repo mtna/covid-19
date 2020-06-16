@@ -89,7 +89,7 @@ def cleanAgeData(data):
 	df = df[['date_stamp', 'age_group', 'cnt_confirmed', 'cnt_confirmed_new', 'pct_confirmed', 'pct_confirmed_new', 'cnt_death', 'cnt_death_new']]
 
 	# order the records by date
-	df = df.sort_values(by='date_stamp', ascending=True)
+	df = df.sort_values(by=['date_stamp','age_group'], ascending=True)
 
 	return df
 
