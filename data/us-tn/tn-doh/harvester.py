@@ -280,6 +280,6 @@ if __name__ == "__main__":
 			#write to the latest file (clear and rewrite)
 			if path.exists(f'./data/us-tn/tn-doh/latest_sex.csv'):
 				open('./data/us-tn/tn-doh/latest_sex.csv', 'w').close()
-				race.to_csv(f"./data/us-tn/tn-doh/latest_sex.csv", index=False)
+				sex.to_csv(f"./data/us-tn/tn-doh/latest_sex.csv", index=False)
 
 
