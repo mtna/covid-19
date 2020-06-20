@@ -114,7 +114,6 @@ def get_config():
     global config
     return config
 
-
 def get_source_df(report_date):
     """Download the daily reports CSV file for specified date as a dataframe"""
     # init
