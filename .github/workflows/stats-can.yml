@@ -25,7 +25,7 @@ jobs:
     - name: pull data via curl
       run: |
        apt-get update && apt-get install -y zip
-       /bin/sh tools/covid19-scraper/scripts/statCanDownload.sh https://www150.statcan.gc.ca/n1/tbl/csv/13100781-eng.zip 13100781.csv ./data/ca/statcan/cases_revised/raw/
+       /bin/sh scripts/statCanDownload.sh https://www150.statcan.gc.ca/n1/tbl/csv/13100781-eng.zip 13100781.csv ./data/ca/statcan/cases_revised/raw/
     - name: Set up Python
       uses: actions/setup-python@v1
       with:
