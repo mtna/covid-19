@@ -1,18 +1,16 @@
 name: statcan
-
+#note that this is for the stats canada revised dataset. the original is no longer getting updated. 
 on: 
-#  schedule:
-#   #run daily at 6 UTC (2ET)
-#   #note that this takes around 10 minutes to run so it should be the last one in the series
- #  - cron: '0 6 * * *'
+  schedule:
+   #run daily at 6 UTC (2ET)
+   - cron: '0 6 * * *'
 
 # uncomment these lines if you need to run the pipeline manually. 
- push:
+# push:
    #run on every push to master
-     branches: [ master ]
+  #   branches: [ master ]
 
 jobs:
-  
   ca-statcan:
    name: StatsCan Data Ingestion
    runs-on: ubuntu-latest
@@ -42,14 +40,14 @@ jobs:
        git add .
        git commit -m "adding StatsCan Revised data via github actions"
        git push github HEAD:${GITHUB_REF}
-#     - name: Slack notification
-#       #should run if any previous step fails
-#       if: failure()
-#       env:
-#        SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK }}
-#        SLACK_USERNAME: GitHub Actions # Optional. (defaults to webhook app)
-#        SLACK_CHANNEL: alerts-rds # Optional. (defaults to webhook)
-#        SLACK_AVATAR: repository # Optional. can be (repository, sender, an URL) (defaults to webhook app avatar)
-#       uses: Ilshidur/action-slack@master
-#       with:
-#           args: 'Something went wrong in the stats-can workflow.' # Optional
+    - name: Slack notification
+      #should run if any previous step fails
+      if: failure()
+      env:
+       SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK }}
+       SLACK_USERNAME: GitHub Actions # Optional. (defaults to webhook app)
+       SLACK_CHANNEL: alerts-rds # Optional. (defaults to webhook)
+       SLACK_AVATAR: repository # Optional. can be (repository, sender, an URL) (defaults to webhook app avatar)
+      uses: Ilshidur/action-slack@master
+      with:
+          args: 'Something went wrong in the stats-can-revised workflow.' # Optional
