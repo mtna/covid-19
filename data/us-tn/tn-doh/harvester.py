@@ -62,6 +62,7 @@ raceEthSexVariables = {
 	'Date': 'date_stamp',
 	'Category': 'category_type',
 	'Cat_Detail': 'category_name',
+	'CAT_DETAIL': 'category_name',
 	'Cat_CaseCount': 'cnt_confirmed',
 	'Cat_Percent': 'pct_confirmed',
 	'CAT_DEATHCOUNT' : 'cnt_death',
@@ -204,7 +205,7 @@ def cleanRaceEthSexData(data):
 	# Code the category details. These will be split out eventually but we may 
 	# also want to build a wide file, because of this we will add the coded 
 	# variable alongside the original
-	df['category_code'] = df['category_name'].map({ 'Pending':'9', 'Hispanic':'1', 'Not Hispanic or Latino': '0', 'Asian': '0', 'Black or African American': '1', 'White': '2', 'Other/Multiracial': '3', 'Male': '1', 'Female': '2' })
+	df['category_code'] = df['category_name'].map({ 'Pending':'9', 'Hispanic':'1', 'Not Hispanic or Latino': '0', 'Asian': '0', 'Black or African American': '1', 'White': '2', 'Other/Multiracial': '3', 'American Indian or Alaska Native': '4', 'Native Hawaiian or Other Pacific Islander':'5', 'Male': '1', 'Female': '2' })
 
 	# multiply the percentages by 100
 	df['pct_confirmed'] = df['pct_confirmed'].apply(lambda x: round(x*100,4))
