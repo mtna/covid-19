@@ -3,7 +3,7 @@ name: ca gov
 on: 
    schedule:
     #run every night at 5:10 UTC
-     - cron: '10 5 * * *'
+     - cron: '10 6 * * *'
 #   push:
  #   branches: [ master ]
 
