@@ -31,8 +31,11 @@ We currently are currently harvesting and compiling data form the following data
 
 We have done the work of gathering and cleaning the data to power our RDS API, but it is open to the public to use however you wish. Below are some ways to interact with the data through our RDS products, which are all currently free to use.
 
-- Use the [Tabulation Engine](https://covid19.richdataservices.com/rds-tabengine/data-product-selection) to create the tabulation you need, then copy the code to use the data in your preferred language. 
-- Explore the data and metadata in the [RDS Explorer](https://covid19.richdataservices.com/rds-explorer/data-product-selection).
+- Use the [Tabulation Engine](https://covid19.richdataservices.com/rds-tabengine/data-product-selection) to create the tabulation you need, then copy the code to use the data in your preferred language.   
+![tabEngine](assets/tabEngineTour.png)
+![codeSnippet](assets/codeSnippet.gif)
+- Explore the data and metadata in the [RDS Explorer](https://covid19.richdataservices.com/rds-explorer/data-product-selection).  
+![explorer](assets/explorerTour.png)
 - Use our SDKs to integrate the RDS API into your app: 
   - JavaScript ([SDK](https://github.com/mtna/rds-js) + [Example app](https://mtna.github.io/rds-js-examples/covid.html))
   - Python ([SDK](https://github.com/mtna/rds-python) + [Jupyter Notebook](https://github.com/mtna/rds-python-examples))
