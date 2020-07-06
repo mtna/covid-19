@@ -2,7 +2,7 @@
 
 #### _WARNING: THIS PROJECT IS IN EARLY DEVELOPMENT STAGE. CONTENT OR CODE SHOULD ONLY BE USED FOR TESTING OR EVALUATION PURPOSES._
 
-Our COVID-19 project focuses on improving and facilitating access to COVID-19 related data by curating the information and delivering as a through our Rich Data Services API and related web applications. Visit our COVID-19 web site at http://covid-19.mtna.us for more information.
+Our COVID-19 project focuses on improving and facilitating access to COVID-19 related data by curating the information and delivering as a through our Rich Data Services API and related web applications. Visit our COVID-19 web site at https://covid19.richdataservices.com/ for more information.
 
 In the process of packaging the data for publication, we are commonly addressing various data quality issues surrounding the various data sources, such as:
 
@@ -24,6 +24,7 @@ We currently are currently harvesting and compiling data form the following data
 - [Statistics Canada](https://www.statcan.gc.ca/eng/start)
 - [New York State Health Data](https://health.data.ny.gov/)
 - [Ohio Department of Health](https://coronavirus.ohio.gov/wps/portal/gov/covid-19/dashboards)
+- [Tennessee Department of Health](https://www.tn.gov/health/cedep/ncov/data/downloadable-datasets.html)
 
 
 ## Licensing
