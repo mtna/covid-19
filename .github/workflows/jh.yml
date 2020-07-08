@@ -4,7 +4,7 @@ on:
   schedule:
   #run every night at 1am Eastern Time, since JH is updated around midnight ET.
   #Github actions use UTC time which is 4 hours ahead of ET.
-   - cron: '0 5 * * *'
+   - cron: '0 8 * * *'
 
 # uncomment these lines if you need to run the pipeline manually. 
 #   push:
