@@ -9,8 +9,8 @@ The COVID cases [age](https://covid.knoxcountytn.gov/includes/covid_age.csv) dat
 
 | name                      | generic meaning | type/coding |
 |---------------------------|---|---|
-|     | Age group.            | Text
-| | Count of confirmed cases that fall in this age group.                                         | Numeric
+|[empty]     | Age group.            | Text
+|[empty] | Count of confirmed cases that fall in this age group.                                         | Numeric
 | Percent of Cases | The percentage of confirmed cases this age group represents. | Text
 
 
@@ -105,8 +105,8 @@ The Knox county [gender](https://covid.knoxcountytn.gov/includes/covid_gender.cs
 
 | name                      | generic meaning | type/coding |
 |---------------------------|---|---|
-| | Sex.          | Text
-| | Count of confirmed cases that fall in this sex.                                         | Numeric
+|[empty] | Sex.          | Text
+|[empty] | Count of confirmed cases that fall in this sex.                                         | Numeric
 | Percent of Cases | The percentage of confirmed cases this sex represents. | Text
 
 
