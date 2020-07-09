@@ -1,0 +1,58 @@
+name: Knox County DOH Data
+
+on: 
+   schedule:
+   #run daily at 16:00 UTC (noon eastern - the knox covid website updates daily at 11am.)
+     - cron: '0 16 * * *'
+# on:
+#    push:
+#     branches: [ master ]
+
+jobs:
+ co-knox:   
+    name: Knox County Data Ingestion
+    runs-on: ubuntu-latest
+    
+    steps:
+    - uses: actions/checkout@v2
+       #set up username and id 
+    - uses: fregante/setup-git-token@v1
+      with:
+         token: ${{ secrets.GITHUB_TOKEN }}
+    - name: Set up Python
+      uses: actions/setup-python@v1
+      with:
+        python-version: '3.x'
+    - name: Install dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install pandas
+        pip install addfips
+    - name: pull data via curl
+      run: |
+       git remote add github "https://$GITHUB_ACTOR:$GITHUB_TOKEN@github.com/$GITHUB_REPOSITORY.git"
+       git pull github ${GITHUB_REF} --ff-only
+       /bin/sh scripts/csvDownload.sh KNOX-COVID-AGE https://covid.knoxcountytn.gov/includes/covid_age.csv data/us-tn/co-knox/covid_age/raw
+       /bin/sh scripts/csvDownload.sh KNOX-COVID-BED-CAPACITY https://covid.knoxcountytn.gov/includes/covid_bed_capacity.csv data/us-tn/co-knox/covid_bed_capacity/raw
+       /bin/sh scripts/csvDownload.sh KNOX-COVID-CASES https://covid.knoxcountytn.gov/includes/covid_cases.csv data/us-tn/co-knox/covid_cases/raw
+       /bin/sh scripts/csvDownload.sh KNOX-COVID-GENDER https://covid.knoxcountytn.gov/includes/covid_gender.csv data/us-tn/co-knox/covid_gender/raw
+    - name: transform
+      run: |
+       python data/us-tn/co-knox/covid_age/harvester.py
+       python data/us-tn/co-knox/covid_bed_capacity/harvester.py
+       python data/us-tn/co-knox/covid_cases/harvester.py
+       python data/us-tn/co-knox/covid_gender/harvester.py
+       git add .
+       git commit -m "adding Knox County data via github actions"
+       git push github HEAD:${GITHUB_REF}
+    - name: Slack notification
+      #should run if any previous step fails
+      if: failure()
+      env:
+       SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK }}
+       SLACK_USERNAME: GitHub Actions # Optional. (defaults to webhook app)
+       SLACK_CHANNEL: alerts-rds # Optional. (defaults to webhook)
+       SLACK_AVATAR: repository # Optional. can be (repository, sender, an URL) (defaults to webhook app avatar)
+      uses: Ilshidur/action-slack@master
+      with:
+          args: 'Something went wrong in the Knox County workflow.' # Optional
