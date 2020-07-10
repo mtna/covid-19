@@ -1,6 +1,8 @@
 # Knox County Data 
 
-This directory contains several data sets pulled from the Knox County Health Department's [COVID-19 website](https://covid.knoxcountytn.gov). 
+This directory contains several data sets pulled from the Knox County Health Department's [COVID-19 website](https://covid.knoxcountytn.gov).
+
+The Knox County COVID data updates daily at 11am ET, so this data is updated daily via a GitHub Actions pipeline at 15:15 UTC (11:15am eastern time (DST)).
 
 ## Age
 The COVID cases [age](https://covid.knoxcountytn.gov/includes/covid_age.csv) data set provided by the Knox County health department is a data set containing the frequencies (count and percentages) of the confirmed cases by age group. 
