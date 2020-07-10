@@ -2,8 +2,8 @@ name: Knox County DOH Data
 
 on: 
    schedule:
-   #run daily at 16:00 UTC (noon eastern - the knox covid website updates daily at 11am.)
-     - cron: '0 16 * * *'
+   #run daily at 15:15 UTC (11:15 eastern (DST) - the knox covid website updates daily at 11am.)
+     - cron: '15 15 * * *'
 # on:
 #    push:
 #     branches: [ master ]
