@@ -23,6 +23,10 @@ def cleanData(data, fileName):
     df['pct_used'] = list(map(lambda x: x[:-1], df['pct_used'].values))
     df['pct_available'] = list(map(lambda x: x[:-1], df['pct_available'].values))
     df['date_stamp'] = fileName[0:-4]
+    df['cnt_used'] = df['cnt_used']
+    df['cnt_capacity'] = df['cnt_capacity']
+    df['cnt_available'] = df['cnt_available']
+
 
 	# apply data types
     df['date_stamp'] = pd.to_datetime(df['date_stamp']).dt.strftime('%Y-%m-%d')
@@ -41,7 +45,7 @@ if __name__ == "__main__":
             print(filename)
 
             # For each csv file, map the transformed data to its respective file in the harvested folder
-            data = pd.read_csv(f"./data/us-tn/co-knox/covid_bed_capacity/raw/{filename}")
+            data = pd.read_csv(f"./data/us-tn/co-knox/covid_bed_capacity/raw/{filename}",thousands=',')
             df = cleanData(data, filename)
             df.to_csv(f"./data/us-tn/co-knox/covid_bed_capacity/clean/{filename}", index=False)
         
