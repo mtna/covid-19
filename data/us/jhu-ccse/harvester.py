@@ -279,6 +279,9 @@ def generate_country_all():
 
 def generate_us_county_df(report_date, source_df):
     """Generate U.S. County dataframe for specified date"""
+    # patches
+    if report_date == datetime.date(2020, 8, 11):
+        source_df.loc[(source_df.us_admin2_code == '31153') & (source_df.subdivision_name == 'Recovered'),'us_admin2_code'] = None
     # subset for US
     target_df = source_df[source_df.country_name == "US"]
     # drop colmns that are not needed
