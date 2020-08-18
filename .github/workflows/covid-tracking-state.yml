@@ -1,12 +1,12 @@
 name: covid tracking project
 
 on: 
-#    schedule:
+   schedule:
    #run daily at 5:20 UTC
-#      - cron: '20 5 * * *'
+     - cron: '20 5 * * *'
 
-  push:
-   branches: [ master ]
+#   push:
+#    branches: [ master ]
 
 jobs:
  covid-tracking-state:   
