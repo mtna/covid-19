@@ -7,7 +7,7 @@ variables = {
 	'Onset Date': 'date_stamp',
 	'Date Of Death': 'date_stamp_death',
 	'Case Count': 'cnt_confirmed',
-	'Death Count': 'cnt_death',
+	'Death Due to Illness Count': 'cnt_death',
 	'Hospitalized Count': 'cnt_hospitalized',
 	'Age Range': 'age_group'
 }
