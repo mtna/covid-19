@@ -51,13 +51,14 @@ jobs:
         python tests/csvTest.py ./data/us-tn/tn-doh/daily_case_info/raw 1
         python tests/csvTest.py ./data/us-tn/tn-doh/race_eth_sex/raw 1
       if: always() 
-    - name: co-knox
-      run: |
-       python tests/csvTest.py ./data/us-tn/co-knox/covid_age/raw 1
-       python tests/csvTest.py ./data/us-tn/co-knox/covid_bed_capacity/raw 1
-       python tests/csvTest.py ./data/us-tn/co-knox/covid_cases/raw 1
-       python tests/csvTest.py ./data/us-tn/co-knox/covid_gender/raw 1
-      if: always() 
+      #these are now monitored by the db monitor instead
+#     - name: co-knox
+#       run: |
+#        python tests/csvTest.py ./data/us-tn/co-knox/covid_age/raw 1
+#        python tests/csvTest.py ./data/us-tn/co-knox/covid_bed_capacity/raw 1
+#        python tests/csvTest.py ./data/us-tn/co-knox/covid_cases/raw 1
+#        python tests/csvTest.py ./data/us-tn/co-knox/covid_gender/raw 1
+#       if: always() 
     - name: Slack notification
       #should run if any previous step fails
       if: failure()
