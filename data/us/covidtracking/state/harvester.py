@@ -53,6 +53,9 @@ def cleanData(data):
 
 	# Reformat date as ISO 8601 date
 	df['date_stamp'] = pd.to_datetime(df['date_stamp'], format='%Y%m%d').dt.strftime('%Y-%m-%d')
+	
+	#on 9/23/2020, CTP replaced actually invalid date times with the string "Invalid DateTime". This removes the string.
+	df = df.replace({'Invalid DateTime': None})
 
 	# Reformat datetime to SQL timestamp
 	df['datetime_checked'] = pd.to_datetime(df['datetime_checked']).dt.strftime('%Y-%m-%d %H:%M:%S')
