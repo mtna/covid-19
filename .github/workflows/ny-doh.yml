@@ -2,8 +2,8 @@ name: NY DOH Data
 
 on: 
    schedule:
-   #run daily at 5:40 UTC
-     - cron: '40 5 * * *'
+   #run daily at 5:35 UTC
+     - cron: '35 5 * * *'
 # on:
   # push:
    # branches: [ master ]
