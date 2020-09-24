@@ -9,6 +9,7 @@ variables = {
 	'Asymptomatic': 'asymptomatic',
 	'Death': 'is_deceased',
 	'Episode week': 'episode_week',
+	'Episode week group': 'episode_week_group',
 	'Episode year': 'episode_year',
 	'Gender': 'gender',
 	'Hospital status': 'is_hospitalized',
@@ -58,7 +59,7 @@ def cleanData(df):
 	df.loc[df.episode_weekstamp.astype(str).str.contains('99'), 'episode_weekstamp'] = np.nan
 
 	#drop columns
-	df = df.drop(['recovery_year','recovery_week','onset_week','onset_year','episode_week','episode_year'], axis=1)
+	df = df.drop(['recovery_year','recovery_week','onset_week','onset_year','episode_week','episode_year', 'episode_week_group'], axis=1)
 	#sort values by case id
 	df = df.sort_values(by='case_id', ascending=True)
 	
@@ -68,10 +69,11 @@ def cleanData(df):
 if __name__ == "__main__":
 	path = os.path
 	# Loop over the files within state folder
-	for filename in os.listdir('./data/ca/statcan/cases_revised/raw'):
+	for filename in sorted(os.listdir('./data/ca/statcan/cases_revised/raw')):
+		print(filename)
 		csvFile = filename.replace('.zip','.csv')
 		if filename.endswith('.zip') and path.exists(f'./data/ca/statcan/cases_revised/clean/{csvFile}') == False:
-			print(filename)
+			print("creating clean file for "+filename)
 			# For each csv file, map the transformed data to its respective file in the harvested folder
 			data = pd.read_csv(f"./data/ca/statcan/cases_revised/raw/{filename}")
 			df = pd.DataFrame(data)
