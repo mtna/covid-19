@@ -1,0 +1,148 @@
+district_id,district_name,region_id,region_name
+10,Anderson County,5,East Tennessee CORE Region
+11,Clinton,5,East Tennessee CORE Region
+12,Oak Ridge,5,East Tennessee CORE Region
+20,Bedford County,8,South Central CORE Region
+30,Benton County,1,Northwest Tennessee CORE Region
+40,Bledsoe County,4,Upper Cumberland CORE Region
+50,Blount County,5,East Tennessee CORE Region
+51,Alcoa,5,East Tennessee CORE Region
+52,Maryville,5,East Tennessee CORE Region
+60,Bradley County,7,Southeast Tennessee CORE Region
+61,Cleveland,7,Southeast Tennessee CORE Region
+70,Campbell County,5,East Tennessee CORE Region
+80,Cannon County,4,Upper Cumberland CORE Region
+90,Carroll County,1,Northwest Tennessee CORE Region
+92,Hollow Rock - Bruceton,1,Northwest Tennessee CORE Region
+93,Huntingdon Special School District,1,Northwest Tennessee CORE Region
+94,McKenzie,1,Northwest Tennessee CORE Region
+95,South Carroll,1,Northwest Tennessee CORE Region
+97,West Carroll Sp Dist,1,Northwest Tennessee CORE Region
+100,Carter County,6,First Tennessee CORE Region
+101,Elizabethton,6,First Tennessee CORE Region
+110,Cheatham County,3,Mid Cumberland CORE Region
+120,Chester County,9,Southwest CORE Region
+130,Claiborne County,5,East Tennessee CORE Region
+140,Clay County,4,Upper Cumberland CORE Region
+150,Cocke County,6,First Tennessee CORE Region
+151,Newport,6,First Tennessee CORE Region
+160,Coffee County,8,South Central CORE Region
+161,Manchester,8,South Central CORE Region
+162,Tullahoma,8,South Central CORE Region
+170,Crockett County,1,Northwest Tennessee CORE Region
+171,Alamo,1,Northwest Tennessee CORE Region
+172,Bells,1,Northwest Tennessee CORE Region
+180,Cumberland County,4,Upper Cumberland CORE Region
+190,Davidson County,3,Mid Cumberland CORE Region
+200,Decatur County,9,Southwest CORE Region
+210,DeKalb County,4,Upper Cumberland CORE Region
+220,Dickson County,3,Mid Cumberland CORE Region
+230,Dyer County,1,Northwest Tennessee CORE Region
+231,Dyersburg,1,Northwest Tennessee CORE Region
+240,Fayette County Public Schools,9,Southwest CORE Region
+250,Fentress County,4,Upper Cumberland CORE Region
+260,Franklin County,8,South Central CORE Region
+271,Humboldt City Schools,1,Northwest Tennessee CORE Region
+272,Milan,1,Northwest Tennessee CORE Region
+273,Trenton,1,Northwest Tennessee CORE Region
+274,Bradford,1,Northwest Tennessee CORE Region
+275,Gibson Co Sp Dist,1,Northwest Tennessee CORE Region
+280,Giles County,8,South Central CORE Region
+290,Grainger County,5,East Tennessee CORE Region
+300,Greene County,6,First Tennessee CORE Region
+301,Greeneville,6,First Tennessee CORE Region
+310,Grundy County,7,Southeast Tennessee CORE Region
+320,Hamblen County,6,First Tennessee CORE Region
+330,Hamilton County,7,Southeast Tennessee CORE Region
+340,Hancock County,6,First Tennessee CORE Region
+350,Hardeman County Schools,9,Southwest CORE Region
+360,Hardin County,9,Southwest CORE Region
+370,Hawkins County,6,First Tennessee CORE Region
+371,Rogersville,6,First Tennessee CORE Region
+380,Haywood County,9,Southwest CORE Region
+390,Henderson County,9,Southwest CORE Region
+391,Lexington,9,Southwest CORE Region
+400,Henry County,1,Northwest Tennessee CORE Region
+401,Paris,1,Northwest Tennessee CORE Region
+410,Hickman County,8,South Central CORE Region
+420,Houston County,3,Mid Cumberland CORE Region
+430,Humphreys County,3,Mid Cumberland CORE Region
+440,Jackson County,4,Upper Cumberland CORE Region
+450,Jefferson County,5,East Tennessee CORE Region
+460,Johnson County,6,First Tennessee CORE Region
+470,Knox County,5,East Tennessee CORE Region
+480,Lake County,1,Northwest Tennessee CORE Region
+490,Lauderdale County,9,Southwest CORE Region
+500,Lawrence County,8,South Central CORE Region
+510,Lewis County,8,South Central CORE Region
+520,Lincoln County,8,South Central CORE Region
+521,Fayetteville,8,South Central CORE Region
+530,Loudon County,5,East Tennessee CORE Region
+531,Lenoir City,5,East Tennessee CORE Region
+540,McMinn County,7,Southeast Tennessee CORE Region
+541,Athens,7,Southeast Tennessee CORE Region
+542,Etowah,7,Southeast Tennessee CORE Region
+550,McNairy County,9,Southwest CORE Region
+560,Macon County,4,Upper Cumberland CORE Region
+570,Madison County,9,Southwest CORE Region
+580,Marion County,7,Southeast Tennessee CORE Region
+581,Richard City,7,Southeast Tennessee CORE Region
+590,Marshall County,8,South Central CORE Region
+600,Maury County,8,South Central CORE Region
+610,Meigs County,7,Southeast Tennessee CORE Region
+620,Monroe County,5,East Tennessee CORE Region
+621,Sweetwater,5,East Tennessee CORE Region
+630,Montgomery County,3,Mid Cumberland CORE Region
+640,Moore County,8,South Central CORE Region
+650,Morgan County,5,East Tennessee CORE Region
+660,Obion County,1,Northwest Tennessee CORE Region
+661,Union City,1,Northwest Tennessee CORE Region
+670,Overton County,4,Upper Cumberland CORE Region
+680,Perry County,8,South Central CORE Region
+690,Pickett County,4,Upper Cumberland CORE Region
+700,Polk County,7,Southeast Tennessee CORE Region
+710,Putnam County,4,Upper Cumberland CORE Region
+720,Rhea County,7,Southeast Tennessee CORE Region
+721,Dayton,7,Southeast Tennessee CORE Region
+730,Roane County,5,East Tennessee CORE Region
+740,Robertson County,3,Mid Cumberland CORE Region
+750,Rutherford County,3,Mid Cumberland CORE Region
+751,Murfreesboro,3,Mid Cumberland CORE Region
+760,Scott County,5,East Tennessee CORE Region
+761,Oneida,5,East Tennessee CORE Region
+770,Sequatchie County,7,Southeast Tennessee CORE Region
+780,Sevier County,5,East Tennessee CORE Region
+792,Shelby County,9,Southwest CORE Region
+793,Arlington,9,Southwest CORE Region
+794,Bartlett,9,Southwest CORE Region
+795,Collierville,9,Southwest CORE Region
+796,Germantown,9,Southwest CORE Region
+797,Lakeland,9,Southwest CORE Region
+798,Millington Municipal Schools,9,Southwest CORE Region
+800,Smith County,4,Upper Cumberland CORE Region
+810,Stewart County,3,Mid Cumberland CORE Region
+820,Sullivan County,6,First Tennessee CORE Region
+821,Bristol,6,First Tennessee CORE Region
+822,Kingsport,6,First Tennessee CORE Region
+830,Sumner County,3,Mid Cumberland CORE Region
+840,Tipton County,9,Southwest CORE Region
+850,Trousdale County,4,Upper Cumberland CORE Region
+860,Unicoi County,6,First Tennessee CORE Region
+870,Union County,5,East Tennessee CORE Region
+880,Van Buren County,4,Upper Cumberland CORE Region
+890,Warren County,4,Upper Cumberland CORE Region
+900,Washington County,6,First Tennessee CORE Region
+901,Johnson City,6,First Tennessee CORE Region
+910,Wayne County,8,South Central CORE Region
+920,Weakley County,1,Northwest Tennessee CORE Region
+930,White County,4,Upper Cumberland CORE Region
+940,Williamson County,3,Mid Cumberland CORE Region
+941,Franklin SSD,3,Mid Cumberland CORE Region
+950,Wilson County,3,Mid Cumberland CORE Region
+951,Lebanon,3,Mid Cumberland CORE Region
+960,West Tennessee School for the Deaf,9,Southwest CORE Region
+961,Alvin C York Institute,4,Upper Cumberland CORE Region
+963,Tennessee School for Blind,3,Mid Cumberland CORE Region
+964,Tennessee School for the Deaf,5,East Tennessee CORE Region
+985,Achievement School District,9,Southwest CORE Region
+986,Tennessee State Board of Education,3,Mid Cumberland CORE Region
