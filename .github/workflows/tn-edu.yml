@@ -30,7 +30,6 @@ jobs:
       run: |
         python -m pip install --upgrade pip
         pip install pandas
-        pip install time
         pip install requests
         pip install datetime
         pip install json
