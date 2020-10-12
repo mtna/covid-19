@@ -8,8 +8,9 @@ on:
         required: false
    
    schedule:
-   #run daily at 9:00 UTC / 5am eastern
-     - cron: '00 9 * * *'
+   # run on tuesday night at midnight
+   #run daily at 4:00 UTC / midnight eastern
+     - cron: '0 4 * * 3'
 
 jobs:
  tn-doh:   
