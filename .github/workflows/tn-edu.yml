@@ -32,7 +32,6 @@ jobs:
         pip install pandas
         pip install requests
         pip install datetime
-        pip install json
 
     - name: transform
       run: |
