@@ -33,12 +33,21 @@ jobs:
         pip install requests
         pip install datetime
 
-    - name: transform
+    - name: districts 
       run: |
        python data/us-tn/tn-edu/district-parser.py
+       git add .
+       git commit -m "adding TN Education data via github actions"
+       git push github HEAD:${GITHUB_REF}
+    - name: schools
+      run: |
        python data/us-tn/tn-edu/school-parser.py
+       git add .
+       git commit -m "adding TN Education data via github actions"
+       git push github HEAD:${GITHUB_REF}
+    - name: transform
+      run: |
        python data/us-tn/tn-edu/harvester_latest.py
-
        git add .
        git commit -m "adding TN Education data via github actions"
        git push github HEAD:${GITHUB_REF}
