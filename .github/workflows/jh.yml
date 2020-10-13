@@ -6,10 +6,10 @@ on:
   #Github actions use UTC time which is 4 hours ahead of ET.
    - cron: '0 8 * * *'
 
-# uncomment these lines if you need to run the pipeline manually. 
-#   push:
-   #run on every push to master
-#     branches: [ master ]
+  workflow_dispatch:
+     default:
+        description: 'run manually'
+        required: false
 
 jobs:
   jh:
