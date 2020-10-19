@@ -36,6 +36,7 @@ jobs:
     - name: transform
       run: |
        python data/us/covidtracking/state/harvester.py
+       git pull github ${GITHUB_REF} --ff-only
        git add .
        git commit -m "adding CTP data via github actions"
        git push github HEAD:${GITHUB_REF}

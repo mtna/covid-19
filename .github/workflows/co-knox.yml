@@ -42,6 +42,7 @@ jobs:
        python data/us-tn/co-knox/covid_bed_capacity/harvester.py
        python data/us-tn/co-knox/covid_cases/harvester.py
        python data/us-tn/co-knox/covid_gender/harvester.py
+       git pull github ${GITHUB_REF} --ff-only
        git add .
        git commit -m "adding Knox County data via github actions"
        git push github HEAD:${GITHUB_REF}

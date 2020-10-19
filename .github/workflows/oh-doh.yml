@@ -35,6 +35,7 @@ jobs:
     - name: transform
       run: |
        python data/us-oh/oh-doh/harvester.py
+       git pull github ${GITHUB_REF} --ff-only
        git add .
        git commit -m "adding OH data via github actions"
        git push github HEAD:${GITHUB_REF}

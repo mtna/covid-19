@@ -38,18 +38,21 @@ jobs:
       run: |
        git remote add github "https://$GITHUB_ACTOR:$GITHUB_TOKEN@github.com/$GITHUB_REPOSITORY.git"
        python data/us-tn/tn-edu/district-parser.py
+       git pull github ${GITHUB_REF} --ff-only
        git add .
        git commit -m "adding TN Education data via github actions"
        git push github HEAD:${GITHUB_REF}
     - name: schools
       run: |
        python data/us-tn/tn-edu/school-parser.py
+       git pull github ${GITHUB_REF} --ff-only
        git add .
        git commit -m "adding TN Education data via github actions"
        git push github HEAD:${GITHUB_REF}
     - name: transform
       run: |
        python data/us-tn/tn-edu/harvester_latest.py
+       git pull github ${GITHUB_REF} --ff-only
        git add .
        git commit -m "adding TN Education data via github actions"
        git push github HEAD:${GITHUB_REF}

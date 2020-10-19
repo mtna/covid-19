@@ -33,6 +33,7 @@ jobs:
     - name: transform
       run: |
        python data/ca/gov/cases/harvester.py
+       git pull github ${GITHUB_REF} --ff-only
        git add .
        git commit -m "adding CA-GOV data via github actions"
        git push github HEAD:${GITHUB_REF}
