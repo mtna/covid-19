@@ -16,9 +16,7 @@ jobs:
     steps:
     - uses: actions/checkout@v2
        #set up username and id 
-    - uses: fregante/setup-git-token@v1
-      with:
-         token: ${{ secrets.GITHUB_TOKEN }}
+    - uses: fregante/setup-git-user@v1
     - name: Set up Python
       uses: actions/setup-python@v1
       with:
