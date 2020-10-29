@@ -41,6 +41,9 @@ if __name__ == "__main__":
     # moving normalized district IDs to distrcit_id column
     districts['district_id'] = districts['district_id_normalized']
     districts = districts.drop(['district_id_normalized'], axis=1)
+    districts = districts.drop(['student_cases'], axis=1)
+    districts = districts.drop(['staff_cases'], axis=1)
+    districts = districts.drop(['date_stamp'], axis=1)
 
     # merging district/school dataframes into latest dataframe
     full = districts.merge(schools)
