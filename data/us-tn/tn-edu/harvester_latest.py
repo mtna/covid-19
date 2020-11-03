@@ -67,7 +67,7 @@ if __name__ == "__main__":
     latest['op_restrictions'] = latest['op_restrictions'].astype(pd.Int32Dtype())
     latest['op_restrictions_end_date'] = pd.to_datetime(latest['op_restrictions_end_date']).dt.strftime('%Y-%m-%d %H:%M:%S')
     latest['op_last_update'] = pd.to_datetime(latest['op_last_update']).dt.strftime('%Y-%m-%d %H:%M:%S')
-    latest['date_stamp'] = pd.to_datetime(latest['date_stamp']).dt.strftime('%Y-%m-%d %H:%M:%S')
+    latest['date_stamp'] = pd.to_datetime(latest['date_stamp']).dt.strftime('%Y-%m-%d')
     latest['date_cases_updated'] = pd.to_datetime(latest['date_cases_updated']).dt.strftime('%Y-%m-%d %H:%M:%S')
 
     # ordering df
