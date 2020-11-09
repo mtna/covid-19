@@ -56,10 +56,16 @@ def cleanData(data):
 	
 	#on 9/23/2020, CTP replaced actually invalid date times with the string "Invalid DateTime". This removes the string.
 	df = df.replace({'Invalid DateTime': None})
+	
+	#starting on 11.5.2020, CTP switched from using 00 as indication of midnight to using 24. 
+	#we will recode hours beginning with 24 to begin with zero and leave the day the same.
+	df["datetime_checked"] = df["datetime_checked"].str.replace("24:", "00:")
 
 	# Reformat datetime to SQL timestamp
+
 	df['datetime_checked'] = pd.to_datetime(df['datetime_checked']).dt.strftime('%Y-%m-%d %H:%M:%S')
-	
+		#df['datetime_checked'] = 
+		
 	# get the 0 padded fips codes
 	df['us_state_fips'] = convertStateFIPS(df['us_state_postal'])
 
