@@ -41,13 +41,35 @@ def cleanData(df):
 	# Rename the file headers
 	df.rename(variables, axis="columns", inplace=True)
 	
-	#mark as a string variable 
+	#at some point there started to be a trailing .0 - we will slice this off and recode. keeping as string to preserve the double zero.
+	df['age_group'] = df['age_group'].astype(str).str.slice(0, 1)
 	#recode age groups: statcan's current groupings are 1=0-19, 2=20-29, 3=30-39, 4=40-49, 5=50-59, 6=60-69, 7=70-79, 8=80+, 99=Not stated
-	df['age_group'] = df['age_group'].apply(str).replace({ '1':'00', '2': '20', '3': '30', '4': '40', '5': '50', '6': '60', '7': '70', '8': '80', '99': '99' })
-	#df.age_group.replace(to_replace=dict(1=00, 2=20, 3=30), inplace=True)
+	df['age_group'] = df['age_group'].astype(str).apply(str).replace({ '1':'00', '2': '20', '3': '30', '4': '40', '5': '50', '6': '60', '7': '70', '8': '80', '99': '99', '9':'99' })
 
+	df['asymptomatic'] = df['asymptomatic'].astype(int)
+	df['is_deceased'] = df['is_deceased'].astype(int)
+	df['is_hospitalized'] = df['is_hospitalized'].astype(int)
+	df['occupation'] = df['occupation'].astype(int)
+	df['is_recovered'] = df['is_recovered'].astype(int)
+	df['region'] = df['region'].astype(int)
+	df['symptom_chills'] = df['symptom_chills'].astype(int)
+	df['symptom_cough'] = df['symptom_cough'].astype(int)
+	df['symptom_diarrhea'] = df['symptom_diarrhea'].astype(int)
+	df['symptom_fever'] = df['symptom_fever'].astype(int)
+	df['symptom_headache'] = df['symptom_headache'].astype(int)
+	df['symptom_irritability'] = df['symptom_irritability'].astype(int)
+	df['symptom_nausea'] = df['symptom_nausea'].astype(int)
+	df['symptom_other'] = df['symptom_other'].astype(int)
+	df['symptom_pain'] = df['symptom_pain'].astype(int)
+	df['symptom_runny_nose'] = df['symptom_runny_nose'].astype(int)
+	df['symptom_short_breath'] = df['symptom_short_breath'].astype(int)
+	df['symptom_sore_throat'] = df['symptom_sore_throat'].astype(int)
+	df['symptom_weakness'] = df['symptom_weakness'].astype(int)
+	df['transmission'] = df['transmission'].astype(int)
+
+	
 	#recode sex variable. we have not encountered any code 3(non-binary) but we have seen 7 which is not listed in the statcan documentation. We will adjust this to be 3. 
-	df['gender'] = df['gender'].apply(str).replace({'7':'3'})
+	df['gender'] = df['gender'].apply(str).replace({'7':'3'}).str.slice(0, 2)
 
 	#create a weekstamp var for dates in the format of YYYY-WXX (ex: 2020-W04)
 	df['recovered_weekstamp'] = df['recovery_year'].astype(str) + "-W"+df['recovery_week'].astype(str)
@@ -70,12 +92,12 @@ if __name__ == "__main__":
 	path = os.path
 	# Loop over the files within state folder
 	for filename in sorted(os.listdir('./data/ca/statcan/cases_revised/raw')):
-		print(filename)
+		#print(filename)
 		csvFile = filename.replace('.zip','.csv')
 		if filename.endswith('.zip') and path.exists(f'./data/ca/statcan/cases_revised/clean/{csvFile}') == False:
 			print("creating clean file for "+filename)
 			# For each csv file, map the transformed data to its respective file in the harvested folder
-			data = pd.read_csv(f"./data/ca/statcan/cases_revised/raw/{filename}")
+			data = pd.read_csv(f"./data/ca/statcan/cases_revised/raw/{filename}", dtype={"Age group":"string"})
 			df = pd.DataFrame(data)
 			#pivot the table to use case id as index and the case information values as column headers. reset_index keeps the index as a column instead of dropping.
 			df = df.pivot_table(index='Case identifier number', columns='Case information', values='VALUE').reset_index()
