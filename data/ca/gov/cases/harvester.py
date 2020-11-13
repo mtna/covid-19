@@ -1,5 +1,6 @@
 import os
 import pandas as pd
+import math
 
 variables = {
 	'pruid': 'ca_provterr',
@@ -63,6 +64,8 @@ def cleanData(data):
 	df['cnt_recovered'] = df['cnt_recovered'].astype(int)
 	df['cnt_total_new'] = df['cnt_total_new'].astype(int)
 
+	#round the pct vars up to three decimal places to comply with db limitations
+	df["pct_total_new"]=df["pct_total_new"].round(3)
 	# reorder and drop columns
 	df = df[['date_stamp','ca_provterr','ca_covid19_geo','cnt_confirmed','cnt_probable','cnt_death','cnt_total','cnt_total_new','pct_total_new','cnt_tested','cnt_recovered','pct_recovered']]
 	
