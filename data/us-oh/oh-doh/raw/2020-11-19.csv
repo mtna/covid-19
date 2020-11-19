@@ -1,0 +1,87 @@
+<html lang="en">
+<!-- Mirrored from ux.ohio.gov/?1dmy&urile=wcm%3apath%3a%2FOhio%2BContent%2BEnglish%2Foda%2Fdivisions%2Fadministration%2Fnews-and-events%2Fdummy2-event by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 08 Nov 2018 16:34:45 GMT -->
+
+<head>
+	<link rel="stylesheet" href="/errorpages/404ErrPage_files/MyFontsWebfontsKit.css">
+	<link href='https://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800' rel='stylesheet' type='text/css'>
+	<!-- <link rel="stylesheet" href="/assets/vendor/bootstrap/css/bootstrap.min.css"> -->
+	<link rel="stylesheet" href="https://ux.ohio.gov/assets/sg-style.css">
+
+	<!-- <link rel="stylesheet" href="/assets/ohio-style.css"> -->
+	<link rel="stylesheet" href="/errorpages/sg-style.css">
+	<style>
+		body {
+			font-family: "Open Sans", Arial, sans-serif;
+		}
+
+		.style-guide {
+			width: 100%;
+		}
+
+		.style-guide__wrapper {
+			margin: 80px auto;
+		}
+
+		.style-guide__content {
+			width: 500px;
+			margin: 50px auto;
+		}
+
+		h1,
+		h2,
+		.ohio-page-error-message-message,
+		p {
+			color: #4a4a4a;
+		}
+
+		.ohio-button {
+			margin-top: 25px;
+			background-color: #3d7aa9;
+		}
+
+		.ohio-button:hover {
+			background-color: #3d7aa9;
+		}
+
+		.ohio-page-error-message-logo {
+			margin: 40px auto;
+			width: 350px;
+		}
+
+		.ohio-page-error-message-logo-img {
+			max-width: 350px;
+		}
+	</style>
+
+<body>
+	<section>
+		<article class="style-guide">
+			<div class="style-guide__wrapper">
+				<main class="style-guide__content" role="main">
+					<div class="code-sample">
+						<article class="ohio-page-error-message">
+							<div class="ohio-page-error-message-wrapper">
+								<h1>Page Not Found</h1>
+								<p class="ohio-page-error-message-message">We apologize, the page you requested cannot
+									be found.</p>
+								<p class="ohio-page-error-message-desc">The URL may be misspelled or the page you're
+									looking may no longer available. Click the button below to return to Coronovirus
+									homepage.</p>
+								<a href="https://coronavirus.ohio.gov/" class="ohio-button ">Return to
+									coronavirus.ohio.gov</a>
+							</div>
+							<div class="ohio-page-error-message-logo">
+								<img class="ohio-page-error-message-logo-img"
+									src="/errorpages/404ErrPage_files/ODH_logo.png"
+									alt="Ohio Department of Health logo">
+							</div>
+						</article>
+					</div>
+				</main>
+			</div>
+		</article>
+	</section>
+
+</body>
+
+</html>
