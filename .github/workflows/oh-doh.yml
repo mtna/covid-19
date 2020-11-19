@@ -4,8 +4,11 @@ on:
    schedule:
    #run daily at 5:30 UTC
      - cron: '30 5 * * *'
-#   push:
-#    branches: [ master ]
+
+   workflow_dispatch:
+     default:
+        description: 'run manually'
+        required: false
 
 jobs:
  oh-doh:   
@@ -20,7 +23,7 @@ jobs:
       run: |
           git remote add github "https://$GITHUB_ACTOR:$GITHUB_TOKEN@github.com/$GITHUB_REPOSITORY.git"
           git pull github ${GITHUB_REF} --ff-only
-          /bin/sh scripts/csvDownload.sh OH https://coronavirus.ohio.gov/static/COVIDSummaryData.csv data/us-oh/oh-doh/raw
+          /bin/sh scripts/csvDownload.sh OH https://coronavirus.ohio.gov/static/dashboards/COVIDSummaryData.csv data/us-oh/oh-doh/raw
     - name: Set up Python
       uses: actions/setup-python@v1
       with:
