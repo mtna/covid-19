@@ -19,9 +19,10 @@ def cleanData(data, fileName):
     print(df)
 	
     # the target data frame
-    df['resource_type'] = df['resource_type'].map({ 'All Hospital Beds':'0', 'ICU Beds': '1', 'Ventilators': '2' })
+    df['resource_type'] = df['resource_type'].map({ 'All Hospital Beds *':'0', 'ICU Beds': '1', 'Ventilators': '2', 'Adult Floor Beds/Non-ICU':'3' })
     df['pct_used'] = list(map(lambda x: x[:-1], df['pct_used'].values))
     df['pct_available'] = list(map(lambda x: x[:-1], df['pct_available'].values))
+    df['pct_available'] = df.pct_available.str.replace('%','');
     df['date_stamp'] = fileName[0:-4]
     df['cnt_used'] = df['cnt_used']
     df['cnt_capacity'] = df['cnt_capacity']
