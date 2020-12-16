@@ -37,6 +37,7 @@ if __name__ == "__main__":
             "https://districtinformation.tnedu.gov/api/districts/"+str(district)+"/schools")
         if response.status_code != 200:
             print("Request failed ["+str(response.status_code)+"] for district "+str(district))
+            continue;
 
         schoolArr = response.json()
         for school in schoolArr:
