@@ -32,10 +32,11 @@ if __name__ == "__main__":
         district = row['district_id']
 
         # get the schools info
+        print("Getting school data for district "+str(district))
         response = requests.get(
             "https://districtinformation.tnedu.gov/api/districts/"+str(district)+"/schools")
         if response.status_code != 200:
-            print("Request failed ["+response.status_code+"]")
+            print("Request failed ["+str(response.status_code)+"] for district "+str(district))
 
         schoolArr = response.json()
         for school in schoolArr:
