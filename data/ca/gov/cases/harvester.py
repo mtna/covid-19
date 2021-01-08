@@ -17,6 +17,7 @@ variables = {
 	'ratetested': 'rate_tested',
 	'numtoday': 'cnt_total_new',
 	'percentoday': 'pct_total_new'
+	
 }
 
 def convertDateTimes(df):
@@ -41,8 +42,8 @@ def cleanData(data):
 	# Remove 99 from the standard provinces where == 99
 	df['ca_provterr'] = df['ca_provterr'].replace({99 : None})
 
-	# N/A values are removed from the numeric fields automatically. 
-
+	# drop the "update" column before converting the dates bc df.filter(like"date") will pick this up and throw an error
+	df = df.drop(columns=['update'])
 	# convert all date columns into proper format
 	df = convertDateTimes(df)
 
@@ -63,9 +64,11 @@ def cleanData(data):
 	df['cnt_tested'] = df['cnt_tested'].astype(int)
 	df['cnt_recovered'] = df['cnt_recovered'].astype(int)
 	df['cnt_total_new'] = df['cnt_total_new'].astype(int)
-
+	
+	#convert to string, replace the thousands comma, cast to float
+	df['pct_total_new'] = df['pct_total_new'].str.replace(',','').astype(float)
 	#round the pct vars up to three decimal places to comply with db limitations
-	df["pct_total_new"]=df["pct_total_new"].round(3)
+	df["pct_total_new"]=df["pct_total_new"].round(decimals=3)
 	# reorder and drop columns
 	df = df[['date_stamp','ca_provterr','ca_covid19_geo','cnt_confirmed','cnt_probable','cnt_death','cnt_total','cnt_total_new','pct_total_new','cnt_tested','cnt_recovered','pct_recovered']]
 	
