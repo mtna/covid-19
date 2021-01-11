@@ -65,8 +65,8 @@ def cleanData(data):
 	df['cnt_recovered'] = df['cnt_recovered'].astype(int)
 	df['cnt_total_new'] = df['cnt_total_new'].astype(int)
 	
-	#convert to string, replace the thousands comma, cast to float
-	df['pct_total_new'] = df['pct_total_new'].str.replace(',','').astype(float)
+	#cast to float
+	df['pct_total_new'] = df['pct_total_new'].astype(float)
 	#round the pct vars up to three decimal places to comply with db limitations
 	df["pct_total_new"]=df["pct_total_new"].round(decimals=3)
 	# reorder and drop columns
