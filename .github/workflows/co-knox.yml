@@ -4,9 +4,11 @@ on:
    schedule:
    #run daily at 15:15 UTC (11:15 eastern (DST) - the knox covid website updates daily at 11am.)
      - cron: '15 15 * * *'
-# on:
-#    push:
-#     branches: [ master ]
+
+   workflow_dispatch:
+     default:
+        description: 'run manually'
+        required: false
 
 jobs:
  co-knox:   
