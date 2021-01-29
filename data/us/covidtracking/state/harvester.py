@@ -1,6 +1,7 @@
 import addfips
 import os
 import pandas as pd
+import datetime
 
 variables = {
 	'hash': 'hash',
@@ -109,4 +110,23 @@ if __name__ == "__main__":
 				open('./data/us/covidtracking/state/latest.csv', 'w').close()
 				df.to_csv(f"./data/us/covidtracking/state/latest.csv", index=False)
 
-
+	#delete old files
+	today = datetime.date.today();
+	one_week = datetime.timedelta(days=7)
+	week = today - one_week
+	week_ago = datetime.datetime.combine(week, datetime.time(0, 0))
+	for filename in os.listdir('./data/us/covidtracking/state/raw'):
+		if(filename.endswith('.csv')):
+			newFilename = filename.replace('.csv', '');
+			filedate = datetime.datetime.strptime(newFilename, '%Y-%m-%d')
+			if(filedate < week_ago):
+			    print('removing raw files that are more than a week old: ',filename)
+			    os.remove(f"./data/us/covidtracking/state/raw/{filename}")
+	for filename in os.listdir('./data/us/covidtracking/state/clean'):
+		if(filename.endswith('.csv')):
+			newFilename = filename.replace('.csv', '');
+			filedate = datetime.datetime.strptime(newFilename, '%Y-%m-%d')
+			if(filedate < week_ago):
+			    print('removing clean files that are more than a week old: ',filename)
+			    os.remove(f"./data/us/covidtracking/state/clean/{filename}")
+	

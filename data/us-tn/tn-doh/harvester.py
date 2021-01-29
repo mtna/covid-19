@@ -1,6 +1,7 @@
 import addfips
 import os
 import pandas as pd
+import datetime
 
 ageVariables = {
 	'DATE': 'date_stamp',
@@ -220,6 +221,20 @@ def cleanRaceEthSexData(data):
 
 	return df
 
+def deleteFiles(path):
+	today = datetime.date.today();
+	one_week = datetime.timedelta(days=7)
+	week = today - one_week
+	week_ago = datetime.datetime.combine(week, datetime.time(0, 0))
+	for filename in os.listdir(path):
+		if(filename.endswith('.csv')):
+			newFilename = filename.replace('.csv', '');
+			filedate = datetime.datetime.strptime(newFilename, '%Y-%m-%d')
+			if(filedate < week_ago):
+			    print('removing raw files that are more than a week old: ',path,filename)
+			    os.remove(f"{path}/{filename}")
+	return None
+
 if __name__ == "__main__":
 	path = os.path
 	# Loop over the files within the age folder
@@ -299,4 +314,15 @@ if __name__ == "__main__":
 				open('./data/us-tn/tn-doh/latest_sex.csv', 'w').close()
 				sex.to_csv(f"./data/us-tn/tn-doh/latest_sex.csv", index=False)
 
+	#delete old files
+	deleteFiles('./data/us-tn/tn-doh/daily_case_info/raw')
+	deleteFiles('./data/us-tn/tn-doh/daily_case_info/clean')
+	deleteFiles('./data/us-tn/tn-doh/age/clean')
+	deleteFiles('./data/us-tn/tn-doh/age/raw')
+	deleteFiles('./data/us-tn/tn-doh/county_new/clean')
+	deleteFiles('./data/us-tn/tn-doh/county_new/raw')
+	deleteFiles('./data/us-tn/tn-doh/race_eth_sex/clean_eth')
+	deleteFiles('./data/us-tn/tn-doh/race_eth_sex/clean_sex')
+	deleteFiles('./data/us-tn/tn-doh/race_eth_sex/clean_race')
+	deleteFiles('./data/us-tn/tn-doh/race_eth_sex/raw')
 

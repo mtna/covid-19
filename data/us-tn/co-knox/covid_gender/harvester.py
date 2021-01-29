@@ -1,6 +1,7 @@
 import os
 import math
 import pandas as pd
+import datetime
 
 variables = ['sex','cnt_confirmed','pct_confirmed']
 
@@ -24,6 +25,20 @@ def cleanData(data, fileName):
 
     return df
 
+def deleteFiles(path):
+	today = datetime.date.today();
+	one_week = datetime.timedelta(days=7)
+	week = today - one_week
+	week_ago = datetime.datetime.combine(week, datetime.time(0, 0))
+	for filename in os.listdir(path):
+		if(filename.endswith('.csv')):
+			newFilename = filename.replace('.csv', '');
+			filedate = datetime.datetime.strptime(newFilename, '%Y-%m-%d')
+			if(filedate < week_ago):
+			    print('removing raw files that are more than a week old: ',path,'/',filename)
+			    os.remove(f"{path}/{filename}")
+	return None
+
 if __name__ == "__main__":
     path = os.path
     # Loop over the files within the folder
@@ -41,3 +56,7 @@ if __name__ == "__main__":
                 df.to_csv(f"./data/us-tn/co-knox/covid_gender/latest.csv", mode='a', header=False, index=False)
             else:
                 df.to_csv(f"./data/us-tn/co-knox/covid_gender/latest.csv", index=False)
+
+    deleteFiles('./data/us-tn/co-knox/covid_gender/raw')
+    deleteFiles('./data/us-tn/co-knox/covid_gender/clean')
+

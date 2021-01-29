@@ -2,6 +2,7 @@ import os
 import math
 import pandas as pd
 import numpy as np
+import datetime
 
 variables = {
 	'Case identifier number':'case_id',
@@ -35,6 +36,26 @@ variables = {
 	'Symptom, weakness':'symptom_weakness',
 	'Transmission':'transmission'
 }
+
+def deleteFiles(path):
+	today = datetime.date.today();
+	one_week = datetime.timedelta(days=7)
+	week = today - one_week
+	week_ago = datetime.datetime.combine(week, datetime.time(0, 0))
+	for filename in os.listdir(path):
+		if(filename.endswith('.csv')):
+			newFilename = filename.replace('.csv', '');
+			filedate = datetime.datetime.strptime(newFilename, '%Y-%m-%d')
+			if(filedate < week_ago):
+			    print('removing files that are more than a week old: ',path,'/',filename)
+			    os.remove(f"{path}/{filename}")
+		if(filename.endswith('.zip')):
+			newFilename = filename.replace('.zip', '');
+			filedate = datetime.datetime.strptime(newFilename, '%Y-%m-%d')
+			if(filedate < week_ago):
+			    print('removing files that are more than a week old: ',path,'/',filename)
+			    os.remove(f"{path}/{filename}")
+	return None
 
 def cleanData(df):
 	
@@ -109,3 +130,5 @@ if __name__ == "__main__":
 				#this is a copy of the data in the clean folder, so that the db loading script can look for an unchanging file name.
 				open('./data/ca/statcan/cases_revised/latest.csv', 'w').close()
 				df.to_csv(f"./data/ca/statcan/cases_revised/latest.csv", index=False)
+	deleteFiles('./data/ca/statcan/cases_revised/raw')
+	deleteFiles('./data/ca/statcan/cases_revised/clean')
