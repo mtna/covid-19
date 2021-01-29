@@ -1,6 +1,7 @@
-import addfips
+import datetime
 import os
 import pandas as pd
+import addfips
 
 variables = {
 	'Sex': 'sex',
@@ -96,10 +97,25 @@ def transformData(data):
 
 	return df
 
+def deleteFiles(path):
+	today = datetime.date.today();
+	one_week = datetime.timedelta(days=7)
+	week = today - one_week
+	week_ago = datetime.datetime.combine(week, datetime.time(0, 0))
+	for filename in os.listdir(path):
+		if(filename.endswith('.csv')):
+			newFilename = filename.replace('.csv', '');
+			filedate = datetime.datetime.strptime(newFilename, '%Y-%m-%d')
+			if(filedate < week_ago):
+			    print('removing files that are more than a week old: ',path,'/',filename)
+			    os.remove(f"{path}/{filename}")
+	return None
+
 if __name__ == "__main__":
 	path = os.path
 	# Loop over the files within state folder
 	for filename in os.listdir('./data/us-oh/oh-doh/raw'):
+		
 		if filename.endswith('.csv') and path.exists(f'./data/us-oh/oh-doh/clean/{filename}') == False:
 			print(filename)
 			# For each csv file, map the transformed data to its respective file in the harvested folder
@@ -121,3 +137,7 @@ if __name__ == "__main__":
 				open('./data/us-oh/oh-doh/latest_agg.csv', 'w').close()
 				df.to_csv(f"./data/us-oh/oh-doh/latest_agg.csv", index=False)
 
+	#delete old files
+	deleteFiles('./data/us-oh/oh-doh/raw')
+	deleteFiles('./data/us-oh/oh-doh/clean')
+	deleteFiles('./data/us-oh/oh-doh/transformed')

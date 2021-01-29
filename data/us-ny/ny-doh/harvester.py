@@ -1,6 +1,7 @@
 import addfips
 import os
 import pandas as pd
+import datetime
 
 def transformData(data):
 	df = pd.DataFrame(data)
@@ -36,4 +37,23 @@ if __name__ == "__main__":
 				open('./data/us-ny/ny-doh/latest.csv', 'w').close()
 				df.to_csv(f"./data/us-ny/ny-doh/latest.csv", index=False)
 
-
+	#delete old files
+	today = datetime.date.today();
+	one_week = datetime.timedelta(days=7)
+	week = today - one_week
+	week_ago = datetime.datetime.combine(week, datetime.time(0, 0))
+	for filename in os.listdir('./data/us-ny/ny-doh/raw'):
+		if(filename.endswith('.csv')):
+			newFilename = filename.replace('.csv', '');
+			filedate = datetime.datetime.strptime(newFilename, '%Y-%m-%d')
+			if(filedate < week_ago):
+			    print('removing raw files that are more than a week old: ',filename)
+			    os.remove(f"./data/us-ny/ny-doh/raw/{filename}")
+	for filename in os.listdir('./data/us-ny/ny-doh/clean'):
+		if(filename.endswith('.csv')):
+			newFilename = filename.replace('.csv', '');
+			filedate = datetime.datetime.strptime(newFilename, '%Y-%m-%d')
+			if(filedate < week_ago):
+			    print('removing clean files that are more than a week old: ',filename)
+			    os.remove(f"./data/us-ny/ny-doh/clean/{filename}")
+	

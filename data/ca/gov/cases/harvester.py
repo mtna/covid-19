@@ -1,6 +1,7 @@
 import os
 import pandas as pd
 import math
+import datetime
 
 variables = {
 	'pruid': 'ca_provterr',
@@ -26,6 +27,20 @@ def convertDateTimes(df):
 		df[label] = pd.to_datetime(content, format="%d-%m-%Y").dt.strftime('%Y-%m-%d')
 
 	return df
+
+def deleteFiles(path):
+	today = datetime.date.today();
+	one_week = datetime.timedelta(days=7)
+	week = today - one_week
+	week_ago = datetime.datetime.combine(week, datetime.time(0, 0))
+	for filename in os.listdir(path):
+		if(filename.endswith('.csv')):
+			newFilename = filename.replace('.csv', '');
+			filedate = datetime.datetime.strptime(newFilename, '%Y-%m-%d')
+			if(filedate < week_ago):
+			    print('removing raw files that are more than a week old: ',path,'/',filename)
+			    os.remove(f"{path}/{filename}")
+	return None
 
 def cleanData(data):
 	df = pd.DataFrame(data)
@@ -74,6 +89,20 @@ def cleanData(data):
 	
 	return df
 
+def deleteFiles(path):
+	today = datetime.date.today();
+	one_week = datetime.timedelta(days=7)
+	week = today - one_week
+	week_ago = datetime.datetime.combine(week, datetime.time(0, 0))
+	for filename in os.listdir(path):
+		if(filename.endswith('.csv')):
+			newFilename = filename.replace('.csv', '');
+			filedate = datetime.datetime.strptime(newFilename, '%Y-%m-%d')
+			if(filedate < week_ago):
+			    print('removing files that are more than a week old: ',path,'/',filename)
+			    os.remove(f"{path}/{filename}")
+	return None
+
 if __name__ == "__main__":
 	path = os.path
 	# Loop over the files within state folder
@@ -90,3 +119,6 @@ if __name__ == "__main__":
 				#this is a copy of the data in the clean folder, so that the db loading script can look for an unchanging file name.
 				open('./data/ca/gov/cases/latest.csv', 'w').close()
 				df.to_csv(f"./data/ca/gov/cases/latest.csv", index=False)
+	
+	deleteFiles('./data/ca/gov/cases/raw')
+	deleteFiles('./data/ca/gov/cases/clean')
