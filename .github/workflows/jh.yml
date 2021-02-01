@@ -33,7 +33,7 @@ jobs:
       run: |
        pip install pandas
        cd data/us/jhu-ccse
-       python harvester.py -c
+       python harvester.py -from 2020-01-22 -f -c
        git remote add github "https://$GITHUB_ACTOR:$GITHUB_TOKEN@github.com/$GITHUB_REPOSITORY.git"
        git pull github ${GITHUB_REF} --ff-only
        git add .
