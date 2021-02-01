@@ -1,5 +1,5 @@
 date_stamp,iso3166_1,subdivision_code,us_state_fips,us_state_postal,cnt_confirmed,cnt_deaths,cnt_recovered
-2020-03-22,US,01,01,AL,157,0,0
+2020-03-22,US,01,01,AL,180,0,0
 2020-03-22,US,02,02,AK,20,0,0
 2020-03-22,US,04,04,AZ,152,2,0
 2020-03-22,US,05,05,AR,165,0,0
@@ -24,7 +24,7 @@ date_stamp,iso3166_1,subdivision_code,us_state_fips,us_state_postal,cnt_confirme
 2020-03-22,US,26,26,MI,1035,9,0
 2020-03-22,US,27,27,MN,167,1,0
 2020-03-22,US,28,28,MS,207,1,0
-2020-03-22,US,29,29,MO,87,3,0
+2020-03-22,US,29,29,MO,134,3,0
 2020-03-22,US,30,30,MT,34,0,0
 2020-03-22,US,31,31,NE,51,0,0
 2020-03-22,US,32,32,NV,190,2,0
