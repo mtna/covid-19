@@ -48,7 +48,7 @@ config = {
                 "name_full": {"dtype": "str"}
             }
         },
-        "csse_covid_19_daily_reports_v20200429": {
+        "csse_covid_19_daily_reports_v20200529": {
             "variables": {
                 "us_admin2_code": {"dtype": "str"},
                 "us_admin2_name": {"dtype": "str"},
@@ -62,7 +62,7 @@ config = {
                 "cnt_recovered": {"dtype": "Int64"},
                 "cnt_active": {"dtype": "Int64"},
                 "name_full": {"dtype": "str"},
-                "rate_incidence": {"dtype": "Float32"},
+                "rate_incidence": {"dtype": "Float32"}, 
                 "ratio_case_fatality": {"dtype": "Float32"}
             }
         },
@@ -119,9 +119,9 @@ def get_source_df(report_date):
     """Download the daily reports CSV file for specified date as a dataframe"""
     # init
     base_url = "https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_daily_reports"
-    if report_date >= datetime.date(2020, 4, 29):
+    if report_date >= datetime.date(2020, 5, 29):
         df_info = get_config()[
-            "files"]["csse_covid_19_daily_reports_v20200429"]
+            "files"]["csse_covid_19_daily_reports_v20200529"]
     elif report_date >= datetime.date(2020, 3, 22):
         df_info = get_config()[
             "files"]["csse_covid_19_daily_reports_v20200322"]
