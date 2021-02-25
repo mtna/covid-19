@@ -2,6 +2,7 @@ import datetime
 import os
 import pandas as pd
 import addfips
+import numpy as np
 
 variables = {
 	'Sex': 'sex',
@@ -29,6 +30,9 @@ def cleanData(data):
 	# Convert the date formats
 	df['date_stamp'] = pd.to_datetime(df['date_stamp'], format='%m/%d/%Y')
 	df['date_stamp_death'] = pd.to_datetime(df['date_stamp_death'], format='%m/%d/%Y')
+
+	#convert to int to remove trailing zeroes
+	df['cnt_confirmed'] = df['cnt_confirmed'].astype(int)
 
 	# Add the county fips code
 	af = addfips.AddFIPS()
@@ -91,6 +95,7 @@ def transformData(data):
 	df['cnt_confirmed'] = df['cnt_confirmed'].astype(int)
 	df['cnt_death'] = df['cnt_death'].astype(int)
 	df['cnt_hospitalized'] = df['cnt_hospitalized'].astype(int)
+
 
 	# we will sum by date and county, and then run a cumulative sum over the county.
 	df = df.groupby(['date_stamp','us_county_fips']).sum().groupby(['us_county_fips']).cumsum().reset_index()
