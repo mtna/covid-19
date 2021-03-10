@@ -32,10 +32,7 @@ jobs:
        git pull github ${GITHUB_REF} --ff-only
     - name: ca-gov
       run: python tests/csvTest.py ./data/ca/gov/cases/raw 1
-      if: always()  
-    - name: covid tracking state
-      run: python tests/csvTest.py ./data/us/covidtracking/state/raw 1
-      if: always()  
+      if: always()   
     - name: ny-doh
       run: python tests/csvTest.py ./data/us-ny/ny-doh/raw 1
       if: always()  
