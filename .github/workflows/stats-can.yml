@@ -20,6 +20,8 @@ jobs:
     - uses: fregante/setup-git-user@v1
     - name: pull data via curl
       run: |
+       git remote add github "https://$GITHUB_ACTOR:$GITHUB_TOKEN@github.com/$GITHUB_REPOSITORY.git"
+       git pull github ${GITHUB_REF} --ff-only
        apt-get update && apt-get install -y zip
        /bin/sh scripts/statCanDownload.sh https://www150.statcan.gc.ca/n1/tbl/csv/13100781-eng.zip 13100781.csv ./data/ca/statcan/cases_revised/raw/
     - name: Set up Python
