@@ -34,8 +34,6 @@ jobs:
          pip install pandas
     - name: transform
       run: |
-       git remote add github "https://$GITHUB_ACTOR:$GITHUB_TOKEN@github.com/$GITHUB_REPOSITORY.git"
-       git pull github ${GITHUB_REF} --ff-only
        python data/ca/statcan/cases_revised/harvester.py
        git add .
        git commit -m "adding StatsCan Revised data via github actions"
