@@ -5,10 +5,10 @@ on:
    #run daily at 6 UTC (2ET)
    - cron: '0 6 * * *'
 
-# uncomment these lines if you need to run the pipeline manually. 
-# push:
-   #run on every push to master
-  #   branches: [ master ]
+  workflow_dispatch:
+     default:
+        description: 'run manually'
+        required: false
 
 jobs:
   ca-statcan:
