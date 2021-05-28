@@ -39,13 +39,13 @@ jobs:
     - name: oh-doh
       run: python tests/csvTest.py ./data/us-oh/oh-doh/raw 1
       if: always() 
-    - name: tn-doh
-      run: |
-        python tests/csvTest.py ./data/us-tn/tn-doh/age/raw 1
-        python tests/csvTest.py ./data/us-tn/tn-doh/county_new/raw 1
-        python tests/csvTest.py ./data/us-tn/tn-doh/daily_case_info/raw 1
-        python tests/csvTest.py ./data/us-tn/tn-doh/race_eth_sex/raw 1
-      if: always() 
+#     - name: tn-doh
+#       run: |
+#         python tests/csvTest.py ./data/us-tn/tn-doh/age/raw 1
+#         python tests/csvTest.py ./data/us-tn/tn-doh/county_new/raw 1
+#         python tests/csvTest.py ./data/us-tn/tn-doh/daily_case_info/raw 1
+#         python tests/csvTest.py ./data/us-tn/tn-doh/race_eth_sex/raw 1
+#       if: always() 
       #these are now monitored by the db monitor instead
 #     - name: co-knox
 #       run: |
