@@ -1,4 +1,7 @@
 # Tennessee Department of Health COVID-19 Data
+
+## NOTE: This data is no longer being updated in our GitHub or RDS system. As of early May 2021, the TN Department of Health updated their reporting format which you can read about [here](https://www.tn.gov/content/dam/tn/health/documents/cedep/novel-coronavirus/Covid-19-Data-Update.pdf), and the current datasets can be found [here](https://www.tn.gov/health/cedep/ncov/data/downloadable-datasets.html).  
+
 These datasets are pulled nightly from the Tennesee Department of Health (TDH) website at https://www.tn.gov/health/cedep/ncov/data/downloadable-datasets.html. They are then converted them from xlsx format to csv using the python xlsx2csv utility (full script [here](https://bitbucket.org/mtnaus/covid-19/src/master/tools/covid19-scraper/scripts/xlsxDownload.sh)), and the resulting csv files are added to this directory.
 The metadata for each of these datasets is taken from the provided data dictionary file, which is also pulled nightly from the TN DOH website. 
 
