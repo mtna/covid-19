@@ -1,12 +1,10 @@
 name: TN DOH Data
 
-on: 
-   schedule:
-   #run daily at 5:10 UTC
-     - cron: '10 5 * * *'
-# on:
-#    push:
-#     branches: [ master ]
+on: workflow_dispatch
+#    schedule:
+#    #run daily at 5:10 UTC
+#      - cron: '10 5 * * *'
+
 
 jobs:
  tn-doh:   
