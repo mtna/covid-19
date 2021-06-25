@@ -144,7 +144,7 @@ def get_source_df(report_date):
     df = pd.read_csv(df_url, names=df_names, dtype=df_dtypes, header=0)
     # drop non-standard entities
     df = df[(df.country_name != 'Diamond Princess') & (df.country_name != 'Cruise Ship') & (
-        df.country_name != 'MS Zaandam') & (df.country_name != 'Channel Islands') & (df.country_name != 'Others')]
+        df.country_name != 'MS Zaandam') & (df.country_name != 'Channel Islands') & (df.country_name != 'Others') & (df.country_name != 'Summer Olympics 2020')] 
     # remove leading/trailing spaces
     df.country_name = df.country_name.str.strip()
     return df
