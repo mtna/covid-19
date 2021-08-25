@@ -1,5 +1,5 @@
 date_stamp,ca_provterr,ca_covid19_geo,cnt_confirmed,cnt_probable,cnt_death,cnt_total,cnt_total_new,pct_total_new,cnt_tested,cnt_recovered,pct_recovered
-2020-01-31,35,35,3,0,0,3,3,300.0,0,0,#REF!
+2020-01-31,35,35,3,0,0,3,3,300.0,0,0,
 2020-01-31,59,59,1,0,0,1,1,100.0,0,0,
 2020-02-08,35,35,3,0,0,3,0,0.0,0,0,
 2020-02-08,59,59,4,0,0,4,3,300.0,0,0,
