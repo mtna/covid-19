@@ -7,7 +7,7 @@ variables = {
 	'East Region Hospitals': 'resource_type',
 	'Current Census': 'cnt_used',
 	'Total Capacity': 'cnt_capacity',
-	'Available': 'cnt_available',
+	'Available*': 'cnt_available',
 	'Current Utilization': 'pct_used',
 	'Available Capacity': 'pct_available'
 }
