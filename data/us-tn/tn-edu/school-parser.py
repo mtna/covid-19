@@ -48,7 +48,7 @@ if __name__ == "__main__":
             opRestrictionCode = None
             opRestrictionReason = None
             opRestrictionActive = None
-            if(schoolOperatingModel['restrictions'] == True):
+            if(schoolOperatingModel['restrictions'] == True and schoolOperatingModel.get('restrictionReason')):
                 opRestrictionModel = schoolOperatingModel['restrictionReason']
                 opRestrictionCode = opRestrictionModel['id']
                 opRestrictionReason = opRestrictionModel['reason']
