@@ -1,0 +1,149 @@
+district_id,district_name,region_id,region_name,student_cases,staff_cases,date_stamp
+10,Anderson County,5,East Tennessee CORE Region,42,7,2021-09-28
+11,Clinton,5,East Tennessee CORE Region,0,0,2021-09-28
+12,Oak Ridge,5,East Tennessee CORE Region,,,2021-09-28
+20,Bedford County,8,South Central CORE Region,28,2,2021-09-28
+30,Benton County,1,Northwest Tennessee CORE Region,,,2021-09-28
+40,Bledsoe County,4,Upper Cumberland CORE Region,4,1,2021-09-28
+50,Blount County,5,East Tennessee CORE Region,117,8,2021-09-28
+51,Alcoa,5,East Tennessee CORE Region,,,2021-09-28
+52,Maryville,5,East Tennessee CORE Region,,,2021-09-28
+60,Bradley County,7,Southeast Tennessee CORE Region,39,3,2021-09-28
+61,Cleveland,7,Southeast Tennessee CORE Region,25,2,2021-09-28
+70,Campbell County,5,East Tennessee CORE Region,56,9,2021-09-28
+80,Cannon County,4,Upper Cumberland CORE Region,,,2021-09-28
+90,Carroll County,1,Northwest Tennessee CORE Region,,,2021-09-28
+92,Hollow Rock - Bruceton,1,Northwest Tennessee CORE Region,,,2021-09-28
+93,Huntingdon Special School District,1,Northwest Tennessee CORE Region,16,1,2021-09-28
+94,McKenzie,1,Northwest Tennessee CORE Region,,,2021-09-28
+95,South Carroll,1,Northwest Tennessee CORE Region,,,2021-09-28
+97,West Carroll Sp Dist,1,Northwest Tennessee CORE Region,8,0,2021-09-28
+100,Carter County,6,First Tennessee CORE Region,,,2021-09-28
+101,Elizabethton,6,First Tennessee CORE Region,15,4,2021-09-28
+110,Cheatham County,3,Mid Cumberland CORE Region,,,2021-09-28
+120,Chester County,9,Southwest CORE Region,0,0,2021-09-28
+130,Claiborne County,5,East Tennessee CORE Region,,,2021-09-28
+140,Clay County,4,Upper Cumberland CORE Region,13,2,2021-09-28
+150,Cocke County,6,First Tennessee CORE Region,43,0,2021-09-28
+151,Newport,6,First Tennessee CORE Region,6,1,2021-09-28
+160,Coffee County,8,South Central CORE Region,21,1,2021-09-28
+161,Manchester,8,South Central CORE Region,,,2021-09-28
+162,Tullahoma,8,South Central CORE Region,15,0,2021-09-28
+170,Crockett County,1,Northwest Tennessee CORE Region,10,0,2021-09-28
+171,Alamo,1,Northwest Tennessee CORE Region,,,2021-09-28
+172,Bells,1,Northwest Tennessee CORE Region,,,2021-09-28
+180,Cumberland County,4,Upper Cumberland CORE Region,48,0,2021-09-28
+190,Davidson County,3,Mid Cumberland CORE Region,253,48,2021-09-28
+200,Decatur County,9,Southwest CORE Region,5,0,2021-09-28
+210,DeKalb County,4,Upper Cumberland CORE Region,,,2021-09-28
+220,Dickson County,3,Mid Cumberland CORE Region,26,5,2021-09-28
+230,Dyer County,1,Northwest Tennessee CORE Region,,,2021-09-28
+231,Dyersburg,1,Northwest Tennessee CORE Region,10,2,2021-09-28
+240,Fayette County Public Schools,9,Southwest CORE Region,,,2021-09-28
+250,Fentress County,4,Upper Cumberland CORE Region,7,0,2021-09-28
+260,Franklin County,8,South Central CORE Region,6,0,2021-09-28
+271,Humboldt City Schools,1,Northwest Tennessee CORE Region,4,0,2021-09-28
+272,Milan,1,Northwest Tennessee CORE Region,10,0,2021-09-28
+273,Trenton,1,Northwest Tennessee CORE Region,2,0,2021-09-28
+274,Bradford,1,Northwest Tennessee CORE Region,0,0,2021-09-28
+275,Gibson Co Sp Dist,1,Northwest Tennessee CORE Region,,,2021-09-28
+280,Giles County,8,South Central CORE Region,41,6,2021-09-28
+290,Grainger County,5,East Tennessee CORE Region,,,2021-09-28
+300,Greene County,6,First Tennessee CORE Region,30,0,2021-09-28
+301,Greeneville,6,First Tennessee CORE Region,,,2021-09-28
+310,Grundy County,7,Southeast Tennessee CORE Region,8,1,2021-09-28
+320,Hamblen County,6,First Tennessee CORE Region,61,6,2021-09-28
+330,Hamilton County,7,Southeast Tennessee CORE Region,143,19,2021-09-28
+340,Hancock County,6,First Tennessee CORE Region,24,4,2021-09-28
+350,Hardeman County Schools,9,Southwest CORE Region,,,2021-09-28
+360,Hardin County,9,Southwest CORE Region,0,0,2021-09-28
+370,Hawkins County,6,First Tennessee CORE Region,29,13,2021-09-28
+371,Rogersville,6,First Tennessee CORE Region,,,2021-09-28
+380,Haywood County,9,Southwest CORE Region,9,0,2021-09-28
+390,Henderson County,9,Southwest CORE Region,42,3,2021-09-28
+391,Lexington,9,Southwest CORE Region,12,0,2021-09-28
+400,Henry County,1,Northwest Tennessee CORE Region,,,2021-09-28
+401,Paris,1,Northwest Tennessee CORE Region,,,2021-09-28
+410,Hickman County,8,South Central CORE Region,7,3,2021-09-28
+420,Houston County,3,Mid Cumberland CORE Region,8,1,2021-09-28
+430,Humphreys County,3,Mid Cumberland CORE Region,28,2,2021-09-28
+440,Jackson County,4,Upper Cumberland CORE Region,9,1,2021-09-28
+450,Jefferson County,5,East Tennessee CORE Region,31,11,2021-09-28
+460,Johnson County,6,First Tennessee CORE Region,31,4,2021-09-28
+470,Knox County,5,East Tennessee CORE Region,,,2021-09-28
+480,Lake County,1,Northwest Tennessee CORE Region,1,0,2021-09-28
+490,Lauderdale County,9,Southwest CORE Region,,,2021-09-28
+500,Lawrence County,8,South Central CORE Region,39,5,2021-09-28
+510,Lewis County,8,South Central CORE Region,4,2,2021-09-28
+520,Lincoln County,8,South Central CORE Region,36,6,2021-09-28
+521,Fayetteville,8,South Central CORE Region,2,1,2021-09-28
+530,Loudon County,5,East Tennessee CORE Region,17,0,2021-09-28
+531,Lenoir City,5,East Tennessee CORE Region,0,0,2021-09-28
+540,McMinn County,7,Southeast Tennessee CORE Region,32,8,2021-09-28
+541,Athens,7,Southeast Tennessee CORE Region,10,2,2021-09-28
+542,Etowah,7,Southeast Tennessee CORE Region,6,0,2021-09-28
+550,McNairy County,9,Southwest CORE Region,25,2,2021-09-28
+560,Macon County,4,Upper Cumberland CORE Region,13,3,2021-09-28
+570,Madison County,9,Southwest CORE Region,17,0,2021-09-28
+580,Marion County,7,Southeast Tennessee CORE Region,,,2021-09-28
+581,Richard City,7,Southeast Tennessee CORE Region,,,2021-09-28
+590,Marshall County,8,South Central CORE Region,0,0,2021-09-28
+600,Maury County,8,South Central CORE Region,60,12,2021-09-28
+610,Meigs County,7,Southeast Tennessee CORE Region,4,1,2021-09-28
+620,Monroe County,5,East Tennessee CORE Region,12,5,2021-09-28
+621,Sweetwater,5,East Tennessee CORE Region,,,2021-09-28
+630,Montgomery County,3,Mid Cumberland CORE Region,211,33,2021-09-28
+640,Moore County,8,South Central CORE Region,,,2021-09-28
+650,Morgan County,5,East Tennessee CORE Region,36,2,2021-09-28
+660,Obion County,1,Northwest Tennessee CORE Region,0,0,2021-09-28
+661,Union City,1,Northwest Tennessee CORE Region,,,2021-09-28
+670,Overton County,4,Upper Cumberland CORE Region,18,1,2021-09-28
+680,Perry County,8,South Central CORE Region,13,3,2021-09-28
+690,Pickett County,4,Upper Cumberland CORE Region,11,1,2021-09-28
+700,Polk County,7,Southeast Tennessee CORE Region,,,2021-09-28
+710,Putnam County,4,Upper Cumberland CORE Region,50,9,2021-09-28
+720,Rhea County,7,Southeast Tennessee CORE Region,10,2,2021-09-28
+721,Dayton,7,Southeast Tennessee CORE Region,20,1,2021-09-28
+730,Roane County,5,East Tennessee CORE Region,28,4,2021-09-28
+740,Robertson County,3,Mid Cumberland CORE Region,62,5,2021-09-28
+750,Rutherford County,3,Mid Cumberland CORE Region,188,16,2021-09-28
+751,Murfreesboro,3,Mid Cumberland CORE Region,6,0,2021-09-28
+760,Scott County,5,East Tennessee CORE Region,,,2021-09-28
+761,Oneida,5,East Tennessee CORE Region,13,0,2021-09-28
+770,Sequatchie County,7,Southeast Tennessee CORE Region,6,1,2021-09-28
+780,Sevier County,5,East Tennessee CORE Region,0,0,2021-09-28
+792,Shelby County,9,Southwest CORE Region,324,57,2021-09-28
+793,Arlington,9,Southwest CORE Region,6,0,2021-09-28
+794,Bartlett,9,Southwest CORE Region,25,3,2021-09-28
+795,Collierville,9,Southwest CORE Region,22,5,2021-09-28
+796,Germantown,9,Southwest CORE Region,,,2021-09-28
+797,Lakeland,9,Southwest CORE Region,,,2021-09-28
+798,Millington Municipal Schools,9,Southwest CORE Region,10,1,2021-09-28
+800,Smith County,4,Upper Cumberland CORE Region,,,2021-09-28
+810,Stewart County,3,Mid Cumberland CORE Region,11,3,2021-09-28
+820,Sullivan County,6,First Tennessee CORE Region,44,6,2021-09-28
+821,Bristol,6,First Tennessee CORE Region,,,2021-09-28
+822,Kingsport,6,First Tennessee CORE Region,21,0,2021-09-28
+830,Sumner County,3,Mid Cumberland CORE Region,58,22,2021-09-28
+840,Tipton County,9,Southwest CORE Region,12,0,2021-09-28
+850,Trousdale County,4,Upper Cumberland CORE Region,17,0,2021-09-28
+860,Unicoi County,6,First Tennessee CORE Region,,,2021-09-28
+870,Union County,5,East Tennessee CORE Region,29,7,2021-09-28
+880,Van Buren County,4,Upper Cumberland CORE Region,4,2,2021-09-28
+890,Warren County,4,Upper Cumberland CORE Region,,,2021-09-28
+900,Washington County,6,First Tennessee CORE Region,,,2021-09-28
+901,Johnson City,6,First Tennessee CORE Region,6,0,2021-09-28
+910,Wayne County,8,South Central CORE Region,,,2021-09-28
+920,Weakley County,1,Northwest Tennessee CORE Region,28,4,2021-09-28
+930,White County,4,Upper Cumberland CORE Region,,,2021-09-28
+940,Williamson County,3,Mid Cumberland CORE Region,104,31,2021-09-28
+941,Franklin SSD,3,Mid Cumberland CORE Region,7,1,2021-09-28
+950,Wilson County,3,Mid Cumberland CORE Region,,,2021-09-28
+951,Lebanon,3,Mid Cumberland CORE Region,21,3,2021-09-28
+960,West Tennessee School for the Deaf,9,Southwest CORE Region,,,2021-09-28
+961,Alvin C York Institute,4,Upper Cumberland CORE Region,0,0,2021-09-28
+963,Tennessee School for Blind,3,Mid Cumberland CORE Region,,,2021-09-28
+964,Tennessee School for the Deaf,5,East Tennessee CORE Region,3,2,2021-09-28
+985,Achievement School District,9,Southwest CORE Region,18,12,2021-09-28
+986,Tennessee State Board of Education,3,Mid Cumberland CORE Region,,,2021-09-28
+987,Tennessee Public Charter School Commission,3,Mid Cumberland CORE Region,0,0,2021-09-28
