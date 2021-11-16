@@ -6,9 +6,9 @@ import datetime
 ageVariables = {
 	'DATE': 'date_stamp',
 	'AGE_RANGE': 'age_group',
-	'AR_CASECOUNT': 'cnt_confirmed',
+	'AR_TOTALCASES': 'cnt_confirmed',
 	'AR_TOTALPERCENT': 'pct_confirmed',
-	'NEW_ARCASES': 'cnt_confirmed_new',
+	'AR_NEWCASES': 'cnt_confirmed_new',
 	'AR_NEWPERCENT': 'pct_confirmed_new',
 	'AR_TOTALDEATHS' : 'cnt_death',
 	'AR_NEWDEATHS': 'cnt_death_new'
