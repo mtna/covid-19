@@ -511,4 +511,6 @@ if __name__ == "__main__":
         df = generate_us_state_all()
         df.to_csv("us_state/us_state_all.csv", index=False)
         df = generate_us_county_all()
-        df.to_csv("us_county/us_county_all.csv", index=False)
+        county_filename = 'us_county_all'
+        county_compression_options = dict(method='zip', archive_name=f'{county_filename}.csv')
+        df.to_csv("us_county/"+f'{county_filename}.zip', compression=county_compression_options, index=False)
