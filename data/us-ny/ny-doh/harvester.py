@@ -14,6 +14,13 @@ def transformData(data):
 	# order by date ascending to match other files
 	df = df.sort_values(by='date_stamp', ascending=True)
 
+	# Remove any records that are not county level
+	df = df[df['Geography'] != 'REGION']
+
+	# drop columns that are not needed
+	df = df.drop(['Test % Positive'], axis=1)
+	df = df.drop(['Geography'], axis=1)
+
 	# Replace the county name with its Fips code
 	af = addfips.AddFIPS()
 	for key, value in df['us_county_fips'].items():
